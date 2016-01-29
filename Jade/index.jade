@@ -1,0 +1,612 @@
+doctype html
+html(lang='en')
+  // <![endif]
+html
+    // BEGIN HEAD
+    head
+      meta(charset='utf-8')
+      title Ziviso Dashboard
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      meta(content='width=device-width, initial-scale=1', name='viewport')
+      meta(content='', name='description')
+      meta(content='', name='author')
+      // BEGIN GLOBAL MANDATORY STYLES
+      link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/simple-line-icons/simple-line-icons.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/bootstrap/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/uniform/css/uniform.default.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css', rel='stylesheet', type='text/css')
+      // END GLOBAL MANDATORY STYLES
+      // BEGIN PAGE LEVEL PLUGIN STYLES
+      link(href='../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/morris/morris.css', rel='stylesheet', type='text/css')             
+      link(href='../assets/global/plugins/fullcalendar/fullcalendar.min.css', rel='stylesheet', type='text/css')         
+      link(href='../assets/global/plugins/jqvmap/jqvmap/jqvmap.css', rel='stylesheet', type='text/css')
+
+      // END PAGE LEVEL PLUGIN STYLES
+      // BEGIN PAGE STYLES
+      link(href='../../assets/admin/pages/css/tasks.css', rel='stylesheet', type='text/css')
+      // END PAGE STYLES
+      // BEGIN THEME STYLES
+      link(href='../assets/global/css/plugins.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/layouts/layout2/css/layout.min.css', rel='stylesheet', type='text/css')
+      link#style_components(href='../assets/global/css/components.min.css', rel='stylesheet', type='text/css')
+      link#style_color(href='../assets/layouts/layout2/css/themes/blue.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/layouts/layout2/css/custom.min.css', rel='stylesheet', type='text/css')
+
+      // END THEME STYLES
+      link(rel='shortcut icon', href='favicon.ico')
+    // END HEAD
+    
+    body.page-header-fixed.page-sidebar-closed-hide-logo.page-container-bg-solid
+        .page-header.navbar.navbar-fixed-top
+          // BEGIN HEADER INNER
+          .page-header-inner
+            // BEGIN LOGO
+            .page-logo
+              a(href='index.html')
+                img.logo-default(src='../assets/layouts/layout2/img/logo-default.png', alt='logo')
+              |                     
+              .menu-toggler.sidebar-toggler
+                // DOC: Remove the above "hide" to enable the sidebar toggler button on header
+            // END LOGO
+            // BEGIN RESPONSIVE MENU TOGGLER
+            a.menu-toggler.responsive-toggler(href='javascript:;', data-toggle='collapse', data-target='.navbar-collapse')  
+            // END RESPONSIVE MENU TOGGLER
+            // BEGIN PAGE ACTIONS
+            // DOC: Remove "hide" class to enable the page header actions
+                // DOC: Remove the above "hide" to enable the sidebar toggler button on header
+            .page-top
+              // BEGIN HEADER SEARCH BOX
+              // DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box
+              form.search-form.search-form-expanded(action='page_general_search_3.html', method='GET')
+                .input-group
+                  input.form-control(type='text', placeholder='Search...', name='query')
+                  |                             
+                  span.input-group-btn
+                    a.btn.submit(href='javascript:;')
+                      i.icon-magnifier
+              .ul.nav.nav-bar-nav.pull-right
+                li.dropdown.dropdown-user
+                    a.dropdown-toggle(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                      img.img-circle(alt='', src='../assets/layouts/layout2/img/avatar3_small.jpg')
+                      |                                     
+                      span.username.username-hide-on-mobile  Hi Tatenda,
+                      |                                     
+                      i.fa.fa-angle-down
+                                                    
+                    ul.dropdown-menu.dropdown-menu-default
+                      li
+                        a(href='profile.html')
+                          i.icon-user
+                          |  My Profile
+                      |                                     
+                      li
+                        a(href='calendar.html')
+                          i.icon-calendar
+                          |  My Calendar
+                      |                                     
+                      li
+                        a(href='messages.html')
+                          i.icon-envelope-open
+                          |  Messages
+                          |                                             
+                          span.badge.badge-danger  3                                  
+                      |                                     
+                      li.divider  
+                      |                                     
+                      li
+                        a(href='lockscreen.html')
+                          i.icon-lock
+                          |  Lock Screen
+                      |                                     
+                      li
+                        a(href='log-in.html')
+                          i.icon-key
+                          |  Log Out
+        .clearfix
+        .page-container
+            .page-sidebar-wrapper
+                .page-sidebar.navbar-collapse.collapse
+                    ul.page-sidebar-menu.page-header-fixed.page-sidebar-menu-hover-submenu(data-keep-expanded='false', data-auto-scroll='true', data-slide-speed='300') 
+                        li.nav-item.start.active.open
+                            a.nav-link.nav-toggle(href='javascript:;')
+                                i.icon-home
+                                span.title Dashboard
+                        li.nav-item.start.active.open
+                            a.nav-link.nav-toggle(href='javascript:;')
+                                i.icon-folder
+                                span.title Messages
+                        li.nav-item.start.active.open
+                            a.nav-link.nav-toggle(href='javascript:;')
+                                i.icon-user
+                                span.title Members
+                        li.nav-item.start.active.open
+                            a.nav-link.nav-toggle(href='javascript:;')
+                                i.icon-layers
+                                span.title Calender
+                                
+            .page-content-wrapper
+                .page-content
+                    h3.page-title
+                        | Parry Gym
+                    .row
+                        .col-lg-3.col-md-3.col-sm-6.col-xs-12
+                          .dashboard-stat2
+                            .display
+                              .number
+                                h3.font-green-sharp
+                                  span(data-counter='counterup', data-value='220') 0
+                                small Members
+                              .icon
+                                i.icon-user
+                        .col-lg-3.col-md-3.col-sm-6.col-xs-12
+                          .dashboard-stat2
+                            .display
+                              .number
+                                h3.font-red-haze
+                                  span(data-counter='counterup', data-value='49') 0
+                                small Followers
+                              .icon
+                                i.icon-like
+                        .col-lg-3.col-md-3.col-sm-6.col-xs-12
+                          .dashboard-stat2
+                            .display
+                              .number
+                                h3.font-blue-sharp
+                                  span(data-counter='counterup', data-value='5')
+                                small Groups
+                              .icon
+                                i.icon-social-dribbble
+                        .col-lg-3.col-md-3.col-sm-6.col-xs-12
+                          .dashboard-stat2
+                            .display
+                              .number
+                                h3.font-purple-soft
+                                  span(data-counter='counterup', data-value='50')
+                                small Messages Sent
+                              .icon
+                                i.icon-pie-chart
+                            .progress-info
+                              .progress
+                                span.progress-bar.progress-bar-success.purple-soft(style='width: 57%;')
+                                  span.sr-only 89% Weekly Readership
+                              .status
+                                .status-title  Weekly Readership 
+                                .status-number  89% 
+                      
+                    .row
+                        .col-md-6.col-sm-6
+                          .portlet.light.tasks-widget
+                            .portlet-title
+                              .caption
+                                i.icon-share.font-green-haze.hide
+                                span.caption-subject.font-green.bold.uppercase Tasks
+                                span.caption-helper Get it done
+                              .actions 
+                                a.btn.btn-circle.btn-icon-only.btn-default.fullscreen(href='javascript:;', data-original-title='', title='')  
+                            .portlet-body
+                              .task-content
+                                .scroller(style='height: 312px;', data-always-visible='1', data-rail-visible1='1')
+                                  // START TASK LIST
+                                  ul.task-list
+                                    li
+                                      .task-checkbox
+                                        input.liChild(type='checkbox', value='')
+                                      .task-title
+                                        span.task-title-sp  Present 2013 Year IPO Statistics at Board Meeting 
+                                        span.label.label-sm.label-success Company
+                                        span.task-bell
+                                          i.fa.fa-bell-o
+                                      .task-config
+                                        .task-config-btn.btn-group
+                                          a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                                            i.fa.fa-cog
+                                            i.fa.fa-angle-down
+                                          ul.dropdown-menu.pull-right
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-check
+                                                |  Complete
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-pencil
+                                                |  Edit
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-trash-o
+                                                |  Cancel
+                                    li
+                                      .task-checkbox
+                                        input.liChild(type='checkbox', value='')
+                                      .task-title
+                                        span.task-title-sp  Hold An Interview for Marketing Manager Position 
+                                        span.label.label-sm.label-danger Marketing
+                                      .task-config
+                                        .task-config-btn.btn-group
+                                          a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                                            i.fa.fa-cog
+                                            i.fa.fa-angle-down
+                                          ul.dropdown-menu.pull-right
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-check
+                                                |  Complete
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-pencil
+                                                |  Edit
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-trash-o
+                                                |  Cancel
+                                    li
+                                      .task-checkbox
+                                        input.liChild(type='checkbox', value='')
+                                      .task-title
+                                        span.task-title-sp  AirAsia Intranet System Project Internal Meeting 
+                                        span.label.label-sm.label-success AirAsia
+                                        span.task-bell
+                                          i.fa.fa-bell-o
+                                      .task-config
+                                        .task-config-btn.btn-group
+                                          a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                                            i.fa.fa-cog
+                                            i.fa.fa-angle-down
+                                          ul.dropdown-menu.pull-right
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-check
+                                                |  Complete
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-pencil
+                                                |  Edit
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-trash-o
+                                                |  Cancel
+                                    li
+                                      .task-checkbox
+                                        input.liChild(type='checkbox', value='')
+                                      .task-title
+                                        span.task-title-sp  Technical Management Meeting 
+                                        span.label.label-sm.label-warning Company
+                                      .task-config
+                                        .task-config-btn.btn-group
+                                          a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                                            i.fa.fa-cog
+                                            i.fa.fa-angle-down
+                                          ul.dropdown-menu.pull-right
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-check
+                                                |  Complete
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-pencil
+                                                |  Edit
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-trash-o
+                                                |  Cancel
+                                    li
+                                      .task-checkbox
+                                        input.liChild(type='checkbox', value='')
+                                      .task-title
+                                        span.task-title-sp  Kick-off Company CRM Mobile App Development 
+                                        span.label.label-sm.label-info Internal Products
+                                      .task-config
+                                        .task-config-btn.btn-group
+                                          a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                                            i.fa.fa-cog
+                                            i.fa.fa-angle-down
+                                          ul.dropdown-menu.pull-right
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-check
+                                                |  Complete
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-pencil
+                                                |  Edit
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-trash-o
+                                                |  Cancel
+                                    li
+                                      .task-checkbox
+                                        input.liChild(type='checkbox', value='')
+                                      .task-title
+                                        span.task-title-sp  Prepare Commercial Offer For SmartVision Website Rewamp 
+                                        span.label.label-sm.label-danger SmartVision
+                                      .task-config
+                                        .task-config-btn.btn-group
+                                          a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                                            i.fa.fa-cog
+                                            i.fa.fa-angle-down
+                                          ul.dropdown-menu.pull-right
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-check
+                                                |  Complete
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-pencil
+                                                |  Edit
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-trash-o
+                                                |  Cancel
+                                    li
+                                      .task-checkbox
+                                        input.liChild(type='checkbox', value='')
+                                      .task-title
+                                        span.task-title-sp  Sign-Off The Comercial Agreement With AutoSmart 
+                                        span.label.label-sm.label-default AutoSmart
+                                        span.task-bell
+                                          i.fa.fa-bell-o
+                                      .task-config
+                                        .task-config-btn.btn-group.dropup
+                                          a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                                            i.fa.fa-cog
+                                            i.fa.fa-angle-down
+                                          ul.dropdown-menu.pull-right
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-check
+                                                |  Complete
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-pencil
+                                                |  Edit
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-trash-o
+                                                |  Cancel
+                                    li
+                                      .task-checkbox
+                                        input.liChild(type='checkbox', value='')
+                                      .task-title
+                                        span.task-title-sp  Company Staff Meeting 
+                                        span.label.label-sm.label-success Cruise
+                                        span.task-bell
+                                          i.fa.fa-bell-o
+                                      .task-config
+                                        .task-config-btn.btn-group.dropup
+                                          a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                                            i.fa.fa-cog
+                                            i.fa.fa-angle-down
+                                          ul.dropdown-menu.pull-right
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-check
+                                                |  Complete
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-pencil
+                                                |  Edit
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-trash-o
+                                                |  Cancel
+                                    li.last-line
+                                      .task-checkbox
+                                        input.liChild(type='checkbox', value='')
+                                      .task-title
+                                        span.task-title-sp  KeenThemes Investment Discussion 
+                                        span.label.label-sm.label-warning KeenThemes 
+                                      .task-config
+                                        .task-config-btn.btn-group.dropup
+                                          a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                                            i.fa.fa-cog
+                                            i.fa.fa-angle-down
+                                          ul.dropdown-menu.pull-right
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-check
+                                                |  Complete
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-pencil
+                                                |  Edit
+                                            li
+                                              a(href='javascript:;')
+                                                i.fa.fa-trash-o
+                                                |  Cancel
+                         .col-md-6.col-sm-6
+                            .portlet.light
+                                .portlet-title.tabbable-line
+                                    .caption
+                                        i.icon-globe.font-green-sharp
+                                        span.caption-subject.font-green-sharp.bold.uppercase Feeds
+                                    ul.nav.nav-tabs
+                                        li.active
+                                          a.active(href='#tab_1_1', data-toggle='tab')  System 
+                                        li
+                                          a(href='#tab_1_2', data-toggle='tab')  Activities 
+                                .portlet-body
+                                    .tab-content
+                                        #tab_1_1.tab-pane.active
+                                            .scroller(style='height: 339px;', data-always-visible='1', data-rail-visible='0')
+                                                ul.feeds
+                                                      li
+                                                        .col1
+                                                          .cont
+                                                            .cont-col1
+                                                              .label.label-sm.label-success
+                                                                i.fa.fa-bell-o
+                                                            .cont-col2
+                                                              .desc
+                                                                | You have 4 pending tasks.
+                                                                span.label.label-sm.label-info
+                                                                  | Take action
+                                                                  i.fa.fa-share
+                                                        .col2
+                                                          .date  Just now 
+                                        #tab_1_2.tab-pane
+                                            .scroller(style='height: 339px;', data-always-visible='1', data-rail-visible='0')
+                                                ul.feeds
+                                                      li
+                                                        .col1
+                                                          .cont
+                                                            .cont-col1
+                                                              .label.label-sm.label-success
+                                                                i.fa.fa-bell-o
+                                                            .cont-col2
+                                                              .desc
+                                                                | You have 4 pending tasks.
+                                                                span.label.label-sm.label-info
+                                                                  | Take action
+                                                                  i.fa.fa-share
+                                                        .col2
+                                                          .date  Just now 
+                    .row  
+                        .col-md-6.col-sm-6
+                          // BEGIN PORTLET
+                          .portlet.light.calendar
+                            .portlet-title
+                              .caption
+                                i.icon-calendar.font-green-sharp
+                                span.caption-subject.font-green-sharp.bold.uppercase Feeds
+                            .portlet-body
+                              #calendar 
+                        
+                        .col-md-6.col-sm-6
+                          .portlet.light
+                            .portlet-title.tabbable-line
+                              .caption
+                                i.icon-social-twitter.font-green
+                                span.caption-subject.font-green.bold.uppercase Quick Actions
+                              ul.nav.nav-tabs
+                                li.active
+                                  a(href='#tab_actions_pending', data-toggle='tab')  Pending 
+                                li
+                                  a(href='#tab_actions_completed', data-toggle='tab')  Completed
+                                  
+                             .portlet-body
+                                .tab-content
+                                  #tab_actions_pending.tab-pane.active
+                                    // BEGIN: Actions
+                                    .mt-actions
+                                      .mt-action
+                                        .mt-action-img
+                                          img(src='../assets/pages/media/users/avatar10.jpg')
+                                        .mt-action-body
+                                          .mt-action-row
+                                            .mt-action-info
+                                              .mt-action-icon
+                                                i.icon-magnet
+                                              .mt-action-details
+                                                span.mt-action-author Natasha Kim
+                                                p.mt-action-desc
+                                                  | pending for approval pending for approval pending for approval pending for approval
+                                              .mt-action-datetime
+                                                span.mt-action-date 
+                                                span.mt-action-dot.bg-green
+                                                span.mt-action-time 9:30-13:00
+                                              .mt-action-buttons
+                                                .btn-group.btn-group-circle
+                                                  button.btn.btn-outline.green.btn-sm(type='button') Appove
+                                                  button.btn.btn-outline.red.btn-sm(type='button') Reject
+
+
+    .page-footer
+          .page-footer-inner
+            | 2016 &copy; Dashboard by Ziviso.            
+          .scroll-to-top
+            i.icon-arrow-up
+        // END FOOTER
+        //if lt IE 9
+          script(src='../assets/global/plugins/respond.min.js')
+          script(src='../assets/global/plugins/excanvas.min.js')
+        // BEGIN CORE PLUGINS
+    script(src='../assets/global/plugins/jquery.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/bootstrap/js/bootstrap.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/js.cookie.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jquery.blockui.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/uniform/jquery.uniform.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js', type='text/javascript')
+    // END CORE PLUGINS
+    // BEGIN PAGE LEVEL PLUGINS
+    script(src='../assets/global/plugins/moment.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/morris/morris.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/morris/raphael-min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/counterup/jquery.waypoints.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/counterup/jquery.counterup.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/amcharts/amcharts.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/amcharts/serial.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/amcharts/pie.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/amcharts/radar.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/amcharts/themes/light.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/amcharts/themes/patterns.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/amcharts/themes/chalk.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/ammap/ammap.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/ammap/maps/js/worldLow.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/amstockcharts/amstock.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/fullcalendar/fullcalendar.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/flot/jquery.flot.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/flot/jquery.flot.resize.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/flot/jquery.flot.categories.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jquery.sparkline.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js', type='text/javascript')
+    // END PAGE LEVEL PLUGINS
+    // BEGIN THEME GLOBAL SCRIPTS
+    script(src='../assets/global/scripts/app.min.js', type='text/javascript')
+    // END THEME GLOBAL SCRIPTS
+    // BEGIN PAGE LEVEL SCRIPTS
+    script(src='../assets/pages/scripts/dashboard.min.js', type='text/javascript')
+    // END PAGE LEVEL SCRIPTS
+    // BEGIN THEME LAYOUT SCRIPTS
+    script(src='../assets/layouts/layout2/scripts/layout.min.js', type='text/javascript')
+    |         
+    script(src='../assets/layouts/layout2/scripts/demo.min.js', type='text/javascript')
+    |         
+    script(src='../assets/layouts/global/scripts/quick-sidebar.min.js', type='text/javascript')
+    // END THEME LAYOUT SCRIPTS
