@@ -1,0 +1,94 @@
+form#fileupload.inbox-compose.form-horizontal(action='#', method='POST', enctype='multipart/form-data')
+      .inbox-compose-btn
+        button.btn.green
+          i.fa.fa-check
+          | Send
+        button.btn.default.inbox-discard-btn Discard
+        button.btn.default Draft
+      .inbox-form-group.mail-to
+        label.control-label To:
+        .controls.controls-to
+          input.form-control(type='text', name='to')
+          span.inbox-cc-bcc
+            span.inbox-cc  Cc 
+            span.inbox-bcc  Bcc 
+      .inbox-form-group.input-cc.display-hide
+        a.close(href='javascript:;')  
+        label.control-label Cc:
+        .controls.controls-cc
+          input.form-control(type='text', name='cc')
+      .inbox-form-group.input-bcc.display-hide
+        a.close(href='javascript:;')  
+        label.control-label Bcc:
+        .controls.controls-bcc
+          input.form-control(type='text', name='bcc')
+      .inbox-form-group
+        label.control-label Subject:
+        .controls
+          input.form-control(type='text', name='subject')
+      .inbox-form-group
+        textarea.inbox-editor.inbox-wysihtml5.form-control(name='message', rows='12')
+      .inbox-compose-attachment
+        // The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload
+        span.btn.green.btn-outline.fileinput-button
+          i.fa.fa-plus
+          span  Add files... 
+          input(type='file', name='files[]', multiple='')
+        // The table listing the files available for upload/download
+        table.table.table-striped.margin-top-10(role='presentation')
+          tbody.files  
+      script#template-upload(type='text/x-tmpl').
+        {% for (var i=0, file; file=o.files[i]; i++) { %}
+        <tr class="template-upload fade">
+        <td class="name" width="30%">
+        <span>{%=file.name%}</span>
+        </td>
+        <td class="size" width="40%">
+        <span>{%=o.formatFileSize(file.size)%}</span>
+        </td> {% if (file.error) { %}
+        <td class="error" width="20%" colspan="2">
+        <span class="label label-danger">Error</span> {%=file.error%}</td> {% } else if (o.files.valid && !i) { %}
+        <td>
+        <p class="size">{%=o.formatFileSize(file.size)%}</p>
+        <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+        </div>
+        </td> {% } else { %}
+        <td colspan="2"></td> {% } %}
+        <td class="cancel" width="10%" align="right">{% if (!i) { %}
+        <button class="btn btn-sm red cancel">
+        <i class="fa fa-ban"></i>
+        <span>Cancel</span>
+        </button> {% } %}</td>
+        </tr> {% } %}
+      // The template to display files available for download
+      script#template-download(type='text/x-tmpl').
+        {% for (var i=0, file; file=o.files[i]; i++) { %}
+        <tr class="template-download fade"> {% if (file.error) { %}
+        <td class="name" width="30%">
+        <span>{%=file.name%}</span>
+        </td>
+        <td class="size" width="40%">
+        <span>{%=o.formatFileSize(file.size)%}</span>
+        </td>
+        <td class="error" width="30%" colspan="2">
+        <span class="label label-danger">Error</span> {%=file.error%}</td> {% } else { %}
+        <td class="name" width="30%">
+        <a href="{%=file.url%}" title="{%=file.name%}" data-gallery="{%=file.thumbnail_url&&'gallery'%}" download="{%=file.name%}">{%=file.name%}</a>
+        </td>
+        <td class="size" width="40%">
+        <span>{%=o.formatFileSize(file.size)%}</span>
+        </td>
+        <td colspan="2"></td> {% } %}
+        <td class="delete" width="10%" align="right">
+        <button class="btn default btn-sm" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}" {% if (file.delete_with_credentials) { %} data-xhr-fields='{"withCredentials":true}' {% } %}>
+        <i class="fa fa-times"></i>
+        </button>
+        </td>
+        </tr> {% } %}
+      .inbox-compose-btn
+        button.btn.green
+          i.fa.fa-check
+          | Send
+        button.btn.default Discard
+        button.btn.default Draft

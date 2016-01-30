@@ -1,0 +1,1092 @@
+doctype html
+html(lang='en')
+  // <![endif]
+html
+    // BEGIN HEAD
+    head
+      meta(charset='utf-8')
+      title Ziviso Dashboard
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      meta(content='width=device-width, initial-scale=1', name='viewport')
+      meta(content='', name='description')
+      meta(content='', name='author')
+      // BEGIN GLOBAL MANDATORY STYLES
+      // BEGIN GLOBAL MANDATORY STYLES
+      link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/simple-line-icons/simple-line-icons.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/bootstrap/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/uniform/css/uniform.default.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css', rel='stylesheet', type='text/css')
+
+      // END GLOBAL MANDATORY STYLES
+      // BEGIN PAGE LEVEL PLUGINS
+      link(href='../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/morris/morris.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/fullcalendar/fullcalendar.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/bootstrap-select/css/bootstrap-select.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/jqvmap/jqvmap/jqvmap.css', rel='stylesheet', type='text/css')
+      // END PAGE LEVEL PLUGINS
+      // BEGIN THEME GLOBAL STYLES
+      link#style_components(href='../assets/global/css/components.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/css/plugins.min.css', rel='stylesheet', type='text/css')
+      // END THEME GLOBAL STYLES
+      // BEGIN THEME LAYOUT STYLES
+      link(href='../assets/layouts/layout4/css/layout.min.css', rel='stylesheet', type='text/css')
+      link#style_color(href='../assets/layouts/layout4/css/themes/light.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/layouts/layout4/css/custom.min.css', rel='stylesheet', type='text/css')
+      // END THEME LAYOUT STYLES
+      link(rel='shortcut icon', href='favicon.ico')
+      // END HEAD
+    
+    
+    body.page-header-fixed.page-sidebar-closed-hide-logo.page-container-bg-solid
+        
+        .page-header.navbar.navbar-fixed-top
+          
+          // BEGIN HEADER INNER
+          .page-header-inner
+            // BEGIN LOGO
+            .page-logo
+              a(href='index.html')
+                img.logo-default(src='../assets/layouts/layout2/img/logo-default.png', alt='logo')
+              |                     
+              .menu-toggler.sidebar-toggler
+                // DOC: Remove the above "hide" to enable the sidebar toggler button on header
+            // END LOGO
+            // BEGIN RESPONSIVE MENU TOGGLER
+            a.menu-toggler.responsive-toggler(href='javascript:;', data-toggle='collapse', data-target='.navbar-collapse')  
+            // END RESPONSIVE MENU TOGGLER
+            // BEGIN PAGE ACTIONS
+            // DOC: Remove "hide" class to enable the page header actions
+                // DOC: Remove the above "hide" to enable the sidebar toggler button on header
+            .page-top
+              // BEGIN HEADER SEARCH BOX
+              // DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box
+              form.search-form.search-form-expanded(action='page_general_search_3.html', method='GET')
+                .input-group
+                  input.form-control(type='text', placeholder='Search...', name='query')
+                  |                             
+                  span.input-group-btn
+                    a.btn.submit(href='javascript:;')
+                      i.icon-magnifier
+              .ul.nav.nav-bar-nav.pull-right
+                li.dropdown.dropdown-user
+                    a.dropdown-toggle(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                      img.img-circle(alt='', src='../assets/layouts/layout2/img/avatar3_small.jpg')
+                      |                                     
+                      span.username.username-hide-on-mobile  Hi Tatenda,
+                      |                                     
+                      i.fa.fa-angle-down
+                                                    
+                    ul.dropdown-menu.dropdown-menu-default
+                      li
+                        a(href='profile.html')
+                          i.icon-user
+                          |  My Profile
+                      |                                     
+                      li
+                        a(href='calendar.html')
+                          i.icon-calendar
+                          |  My Calendar
+                      |                                     
+                      li
+                        a(href='messages.html')
+                          i.icon-envelope-open
+                          |  Messages
+                          |                                             
+                          span.badge.badge-danger  3                                  
+                      |                                     
+                      li.divider  
+                      |                                     
+                      li
+                        a(href='lockscreen.html')
+                          i.icon-lock
+                          |  Lock Screen
+                      |                                     
+                      li
+                        a(href='log-in.html')
+                          i.icon-key
+                          |  Log Out
+        .clearfix
+        .page-container
+            .page-sidebar-wrapper
+                .page-sidebar.navbar-collapse.collapse
+                    ul.page-sidebar-menu.page-header-fixed.page-sidebar-menu-hover-submenu(data-keep-expanded='false', data-auto-scroll='true', data-slide-speed='300') 
+                        li.nav-item.start
+                            a.nav-link.nav-toggle(href='index.html')
+                                i.icon-home
+                                span.title Dashboard
+                        li.nav-item.start
+                            a.nav-link.nav-toggle(href='messages.html')
+                                i.icon-folder
+                                span.title Messages
+                        li.nav-item.start
+                            a.nav-link.nav-toggle(href='members.html')
+                                i.icon-user
+                                span.title Members
+                        li.nav-item.start
+                            a.nav-link.nav-toggle(href='calender.html')
+                                i.icon-layers
+                                span.title Calender
+                                
+            .page-content-wrapper
+                .page-content
+                  h3.page-title
+                    | Tatenda Chikomba
+                    small ....Administrator
+                  .profile
+                    .tabbable-line.tabbable-full-width
+                      ul.nav.nav-tabs
+                        li.active
+                          a(href='#tab_1_1', data-toggle='tab')  Overview 
+                        |                                 
+                        li
+                          a(href='#tab_1_3', data-toggle='tab')  Account 
+                        |                                 
+                        li
+                          a(href='#tab_1_6', data-toggle='tab')  Help 
+                      |                             
+                      .tab-content
+                        #tab_1_1.tab-pane.active
+                          .row                           
+                            .col-md-9
+                              .tabbable-line.tabbable-custom-profile
+                                ul.nav.nav-tabs
+                                  li.active
+                                    a(href='#tab_1_11', data-toggle='tab')  Users 
+                                  |                                                     
+                                  li
+                                    a(href='#tab_1_22', data-toggle='tab')  Feeds 
+                                |                                                 
+                                .tab-content
+                                  #tab_1_11.tab-pane.active
+                                    .portlet-body
+                                      table.table.table-striped.table-bordered.table-advance.table-hover
+                                        thead
+                                          tr
+                                            th
+                                              i.fa.fa-briefcase
+                                              |  Name 
+                                            |                                                                         
+                                            th.hidden-xs
+                                              i.fa.fa-question
+                                              |  Position 
+                                            |                                                                         
+                                            th
+                                              i.fa.fa-bookmark
+                                              |  Account 
+                                            |                                                                         
+                                            th  
+                                        |                                                                 
+                                        tbody
+                                          tr
+                                            td
+                                              a(data-toggle='modal', href='#profile')  Chenjerai 
+                                            |                                                                         
+                                            td.hidden-xs  Customer Service Assistant
+                                            |                                                                         
+                                            td
+                                              | General 
+                                      
+                                            |                                                                         
+                                            td
+                                              a.btn.btn-sm.grey-salsa.btn-outline(data-toggle='modal', href='#profile')  View 
+                                          tr
+                                            td
+                                              a.btn.green.btn-outline.sbold(data-toggle='modal', href='#draggable')  New User + 
+                                              
+                                  #draggable.modal.fade.draggable-modal(tabindex='-1', role='basic', aria-hidden='true')
+                                    .modal-dialog
+                                      .modal-content
+                                        .modal-header
+                                          button.close(type='button', data-dismiss='modal', aria-hidden='true')
+                                          |                                                     
+                                          h4.modal-title Add User 
+                                        |                                                 
+                                        .modal-body 
+                                          .form-group
+                                            label.control-label Email Address 
+                                            |                                                             
+                                            input.form-control(type='text', placeholder='user@company.com')
+                                            
+                                          .form-group
+                                            label.control-label Account Type
+                                            select.bs-select.form-control
+                                              option Administrator
+                                              |                                                         
+                                              option General
+                                          p
+                                          | Login details will be forwarded to the users email address. 
+                                        |                                            
+                                             
+                                        .modal-footer
+                                          button.btn.dark.btn-outline(type='button', data-dismiss='modal') Close
+                                          |                                                     
+                                          button.btn.green(type='button') ADD
+                                  
+                                  #profile.modal.fade.draggable-modal(tabindex='-1', role='basic', aria-hidden='true')
+                                    .modal-dialog
+                                      .modal-content
+                                        .modal-header
+                                          button.close(type='button', data-dismiss='modal', aria-hidden='true')
+                                          |                                                     
+                                          h4.modal-title View User 
+                                        |                                                 
+                                        .modal-body 
+                                          .form-group
+                                            label.control-label Full Name 
+                                            |                                                             
+                                            input.form-control(type='text', placeholder='Chenjerai Mutasa')
+                                          .form-group
+                                            label.control-label Email Address 
+                                            |                                                             
+                                            input.form-control(type='text', placeholder='chenjerai@ziviso.co.zw')
+                                          .form-group
+                                            label.control-label Mobile Number 
+                                            |                                                             
+                                            input.form-control(type='text', placeholder='+263 712 345 566')
+                                          .form-group
+                                            label.control-label Account Type
+                                            select.bs-select.form-control
+                                              option Administrator
+                                              |                                                         
+                                              option General
+                                          p
+                                          | Changes will immediately be added to the users profile.  
+                                        .modal-footer
+                                          button.btn.dark.btn-outline(type='button', data-dismiss='modal') Close
+                                          |                                                     
+                                          button.btn.green(type='button') Save
+                                          
+                                  #tab_1_22.tab-pane
+                                    #tab_1_1_1.tab-pane.active
+                                      .scroller(data-height='290px', data-always-visible='1', data-rail-visible1='1')
+                                        ul.feeds
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-success
+                                                    i.fa.fa-bell-o
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc
+                                                    | You have 4 pending tasks.
+                                                    span.label.label-danger.label-sm
+                                                      | Take action
+                                                      i.fa.fa-share
+                                            |                                                                         
+                                            .col2
+                                              .date  Just now 
+                                          |                                                                     
+                                          li
+                                            a(href='javascript:;')
+                                              .col1
+                                                .cont
+                                                  .cont-col1
+                                                    .label.label-success
+                                                      i.fa.fa-bell-o
+                                                  |                                                                                     
+                                                  .cont-col2
+                                                    .desc  New version v1.4 just lunched! 
+                                              |                                                                             
+                                              .col2
+                                                .date  20 mins 
+                                          |                                                                     
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-danger
+                                                    i.fa.fa-bolt
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc  Database server #12 overloaded. Please fix the issue. 
+                                            |                                                                         
+                                            .col2
+                                              .date  24 mins 
+                                          |                                                                     
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-info
+                                                    i.fa.fa-bullhorn
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc  New order received. Please take care of it. 
+                                            |                                                                         
+                                            .col2
+                                              .date  30 mins 
+                                          |                                                                     
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-success
+                                                    i.fa.fa-bullhorn
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc  New order received. Please take care of it. 
+                                            |                                                                         
+                                            .col2
+                                              .date  40 mins 
+                                          |                                                                     
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-warning
+                                                    i.fa.fa-plus
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc  New user registered. 
+                                            |                                                                         
+                                            .col2
+                                              .date  1.5 hours 
+                                          |                                                                     
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-success
+                                                    i.fa.fa-bell-o
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc
+                                                    | Web server hardware needs to be upgraded.
+                                                    span.label.label-inverse.label-sm  Overdue 
+                                            |                                                                         
+                                            .col2
+                                              .date  2 hours 
+                                          |                                                                     
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-default
+                                                    i.fa.fa-bullhorn
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc  New order received. Please take care of it. 
+                                            |                                                                         
+                                            .col2
+                                              .date  3 hours 
+                                          |                                                                     
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-warning
+                                                    i.fa.fa-bullhorn
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc  New order received. Please take care of it. 
+                                            |                                                                         
+                                            .col2
+                                              .date  5 hours 
+                                          |                                                                     
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-info
+                                                    i.fa.fa-bullhorn
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc  New order received. Please take care of it. 
+                                            |                                                                         
+                                            .col2
+                                              .date  18 hours 
+                                          |                                                                     
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-default
+                                                    i.fa.fa-bullhorn
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc  New order received. Please take care of it. 
+                                            |                                                                         
+                                            .col2
+                                              .date  21 hours 
+                                          |                                                                     
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-info
+                                                    i.fa.fa-bullhorn
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc  New order received. Please take care of it. 
+                                            |                                                                         
+                                            .col2
+                                              .date  22 hours 
+                                          |                                                                     
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-default
+                                                    i.fa.fa-bullhorn
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc  New order received. Please take care of it. 
+                                            |                                                                         
+                                            .col2
+                                              .date  21 hours 
+                                          |                                                                     
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-info
+                                                    i.fa.fa-bullhorn
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc  New order received. Please take care of it. 
+                                            |                                                                         
+                                            .col2
+                                              .date  22 hours 
+                                          |                                                                     
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-default
+                                                    i.fa.fa-bullhorn
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc  New order received. Please take care of it. 
+                                            |                                                                         
+                                            .col2
+                                              .date  21 hours 
+                                          |                                                                     
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-info
+                                                    i.fa.fa-bullhorn
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc  New order received. Please take care of it. 
+                                            |                                                                         
+                                            .col2
+                                              .date  22 hours 
+                                          |                                                                     
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-default
+                                                    i.fa.fa-bullhorn
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc  New order received. Please take care of it. 
+                                            |                                                                         
+                                            .col2
+                                              .date  21 hours 
+                                          |                                                                     
+                                          li
+                                            .col1
+                                              .cont
+                                                .cont-col1
+                                                  .label.label-info
+                                                    i.fa.fa-bullhorn
+                                                |                                                                                 
+                                                .cont-col2
+                                                  .desc  New order received. Please take care of it. 
+                                            |                                                                         
+                                            .col2
+                                              .date  22 hours 
+                                  // tab-pane
+                        // tab_1_2
+                        #tab_1_3.tab-pane
+                          .row.profile-account
+                            .col-md-3
+                              ul.ver-inline-menu.tabbable.margin-bottom-10
+                                li.active
+                                  a(data-toggle='tab', href='#tab_1-1')
+                                    i.fa.fa-cog
+                                    |  Personal info
+                                  |                                                     
+                                  span.after  
+                                |                                                 
+                                li
+                                  a(data-toggle='tab', href='#tab_2-2')
+                                    i.fa.fa-picture-o
+                                    |  Change Avatar
+                                |                                                 
+                                li
+                                  a(data-toggle='tab', href='#tab_3-3')
+                                    i.fa.fa-lock
+                                    |  Change Password
+                                |                                                 
+                                li
+                                  a(data-toggle='tab', href='#tab_4-4')
+                                    i.fa.fa-eye
+                                    |  Privacy Settings
+                            |                                         
+                            .col-md-9
+                              .tab-content
+                                #tab_1-1.tab-pane.active
+                                  form(role='form', action='#')
+                                    .form-group
+                                      label.control-label First Name
+                                      |                                                             
+                                      input.form-control(type='text', placeholder='Tatenda ')
+                                    |                                                                                   
+                                    .form-group
+                                      label.control-label Last Name
+                                      |                                                             
+                                      input.form-control(type='text', placeholder='Chikomba')
+                                    |                                                         
+                                    .form-group
+                                      label.control-label Mobile Number
+                                      |                                                             
+                                      input.form-control(type='text', placeholder='+263 ')
+                                    |                                                                                                             
+                                    .form-group
+                                      label.control-label Occupation
+                                      |                                                             
+                                      input.form-control(type='text', placeholder='Web Developer')
+                                      .form-group
+                                        label.control-label Account Type
+                                        select.bs-select.form-control
+                                          option Administrator
+                                          |                                                         
+                                          option General 
+
+                                    
+                                                                                           
+                                    .margiv-top-10
+                                      a.btn.green(href='javascript:;')  Save Changes 
+                                      |                                                             
+                                      a.btn.default(href='javascript:;')  Cancel 
+                                |                                                 
+                                #tab_2-2.tab-pane
+                                                                   
+                                  form(action='#', role='form')
+                                    .form-group
+                                      .fileinput.fileinput-new(data-provides='fileinput')
+                                        .fileinput-new.thumbnail(style='width: 200px; height: 150px;')
+                                          img(src='http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image', alt='')
+                                        |                                                                 
+                                        .fileinput-preview.fileinput-exists.thumbnail(style='max-width: 200px; max-height: 150px;')  
+                                        |                                                                 
+                                        div
+                                          span.btn.default.btn-file
+                                            span.fileinput-new  Select image 
+                                            |                                                                         
+                                            span.fileinput-exists  Change 
+                                            |                                                                         
+                                            input(type='file', name='...')
+                                          |                                                                     
+                                          a.btn.default.fileinput-exists(href='javascript:;', data-dismiss='fileinput')  Remove 
+                                    |                                                         
+                                    .margin-top-10
+                                      a.btn.green(href='javascript:;')  Submit 
+                                      |                                                             
+                                      a.btn.default(href='javascript:;')  Cancel 
+                                |                                                 
+                                #tab_3-3.tab-pane
+                                  form(action='#')
+                                    .form-group
+                                      label.control-label Current Password
+                                      |                                                             
+                                      input.form-control(type='password')
+                                    |                                                         
+                                    .form-group
+                                      label.control-label New Password
+                                      |                                                             
+                                      input.form-control(type='password')
+                                    |                                                         
+                                    .form-group
+                                      label.control-label Re-type New Password
+                                      |                                                             
+                                      input.form-control(type='password')
+                                    |                                                         
+                                    .margin-top-10
+                                      a.btn.green(href='javascript:;')  Change Password 
+                                      |                                                             
+                                      a.btn.default(href='javascript:;')  Cancel 
+                                |                                                 
+                                #tab_4-4.tab-pane
+                                  form(action='#')
+                                    table.table.table-bordered.table-striped
+                                      tr
+                                        td  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus.. 
+                                        |                                                                 
+                                        td
+                                          label.uniform-inline
+                                            input(type='radio', name='optionsRadios1', value='option1')
+                                            |  Yes
+                                          |                                                                     
+                                          label.uniform-inline
+                                            input(type='radio', name='optionsRadios1', value='option2', checked='')
+                                            |  No
+                                      |                                                             
+                                      tr
+                                        td  Enim eiusmod high life accusamus terry richardson ad squid wolf moon 
+                                        |                                                                 
+                                        td
+                                          label.uniform-inline
+                                            input(type='checkbox', value='')
+                                            |  Yes
+                                      |                                                             
+                                      tr
+                                        td  Enim eiusmod high life accusamus terry richardson ad squid wolf moon 
+                                        |                                                                 
+                                        td
+                                          label.uniform-inline
+                                            input(type='checkbox', value='')
+                                            |  Yes
+                                      |                                                             
+                                      tr
+                                        td  Enim eiusmod high life accusamus terry richardson ad squid wolf moon 
+                                        |                                                                 
+                                        td
+                                          label.uniform-inline
+                                            input(type='checkbox', value='')
+                                            |  Yes
+                                    // end profile-settings
+                                    .margin-top-10
+                                      a.btn.green(href='javascript:;')  Save Changes 
+                                      |                                                             
+                                      a.btn.default(href='javascript:;')  Cancel 
+                            // end col-md-9
+                        // end tab-pane
+                        #tab_1_6.tab-pane
+                          .row
+                            .col-md-2
+                              ul.ver-inline-menu.tabbable.margin-bottom-10
+                                li.active
+                                  a(data-toggle='tab', href='#tab_1')
+                                    i.fa.fa-briefcase
+                                    |  General Questions
+                                  |                                                     
+                                  span.after  
+                                |                                                 
+                                li
+                                  a(data-toggle='tab', href='#tab_2')
+                                    i.fa.fa-group
+                                    |  Membership
+                                |                                                 
+                                li
+                                  a(data-toggle='tab', href='#tab_3')
+                                    i.fa.fa-leaf
+                                    |  Terms Of Service
+                                |                                                 
+                                li
+                                  a(data-toggle='tab', href='#tab_1')
+                                    i.fa.fa-info-circle
+                                    |  License Terms
+                                |                                                 
+                                li
+                                  a(data-toggle='tab', href='#tab_2')
+                                    i.fa.fa-tint
+                                    |  Payment Rules
+                                |                                                 
+                                li
+                                  a(data-toggle='tab', href='#tab_3')
+                                    i.fa.fa-plus
+                                    |  Other Questions
+                            |                                         
+                            .col-md-10
+                              .tab-content
+                                #tab_1.tab-pane.active
+                                  #accordion1.panel-group
+                                    .panel.panel-default
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion1', href='#accordion1_1')
+                                            | 1. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry ?
+                                      |                                                             
+                                      #accordion1_1.panel-collapse.collapse.in
+                                        .panel-body
+                                          | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                          | laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                                          | anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t
+                                          | heard of them accusamus labore sustainable VHS.
+                                    |                                                         
+                                    .panel.panel-default
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion1', href='#accordion1_2')
+                                            | 2. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry ?
+                                      |                                                             
+                                      #accordion1_2.panel-collapse.collapse
+                                        .panel-body
+                                          | Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Anim pariatur cliche reprehenderit,
+                                          | enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                                          | moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
+                                          | ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable
+                                          | VHS.
+                                    |                                                         
+                                    .panel.panel-success
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion1', href='#accordion1_3')  3. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor ? 
+                                      |                                                             
+                                      #accordion1_3.panel-collapse.collapse
+                                        .panel-body
+                                          | Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Anim pariatur cliche reprehenderit,
+                                          | enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                                          | moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
+                                          | ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable
+                                          | VHS.
+                                    |                                                         
+                                    .panel.panel-warning
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion1', href='#accordion1_4')  4. Wolf moon officia aute, non cupidatat skateboard dolor brunch ? 
+                                      |                                                             
+                                      #accordion1_4.panel-collapse.collapse
+                                        .panel-body
+                                          | 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                          | nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                          | craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS.
+                                    |                                                         
+                                    .panel.panel-danger
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion1', href='#accordion1_5')  5. Leggings occaecat craft beer farm-to-table, raw denim aesthetic ? 
+                                      |                                                             
+                                      #accordion1_5.panel-collapse.collapse
+                                        .panel-body
+                                          | 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                          | nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                          | craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                                          | wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et
+                                    |                                                         
+                                    .panel.panel-default
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion1', href='#accordion1_6')  6. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth ? 
+                                      |                                                             
+                                      #accordion1_6.panel-collapse.collapse
+                                        .panel-body
+                                          | 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                          | nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                          | craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                                          | wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et
+                                    |                                                         
+                                    .panel.panel-default
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion1', href='#accordion1_7')  7. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft ? 
+                                      |                                                             
+                                      #accordion1_7.panel-collapse.collapse
+                                        .panel-body
+                                          | 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                          | nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                          | craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                                          | wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et
+                                |                                                 
+                                #tab_2.tab-pane
+                                  #accordion2.panel-group
+                                    .panel.panel-warning
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#accordion2_1')
+                                            | 1. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry ?
+                                      |                                                             
+                                      #accordion2_1.panel-collapse.collapse.in
+                                        .panel-body
+                                          p
+                                            | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                            | laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                                            | wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
+                                            | haven&apos;t heard of them accusamus labore sustainable VHS.
+                                          |                                                                     
+                                          p
+                                            | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                            | laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+                                            | wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
+                                            | haven&apos;t heard of them accusamus labore sustainable VHS.
+                                    |                                                         
+                                    .panel.panel-danger
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#accordion2_2')
+                                            | 2. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry ?
+                                      |                                                             
+                                      #accordion2_2.panel-collapse.collapse
+                                        .panel-body
+                                          | Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Anim pariatur cliche reprehenderit,
+                                          | enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                                          | moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
+                                          | ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable
+                                          | VHS.
+                                    |                                                         
+                                    .panel.panel-success
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#accordion2_3')  3. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor ? 
+                                      |                                                             
+                                      #accordion2_3.panel-collapse.collapse
+                                        .panel-body
+                                          | Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Anim pariatur cliche reprehenderit,
+                                          | enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                                          | moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
+                                          | ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable
+                                          | VHS.
+                                    |                                                         
+                                    .panel.panel-default
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#accordion2_4')  4. Wolf moon officia aute, non cupidatat skateboard dolor brunch ? 
+                                      |                                                             
+                                      #accordion2_4.panel-collapse.collapse
+                                        .panel-body
+                                          | 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                          | nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                          | craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS.
+                                    |                                                         
+                                    .panel.panel-default
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#accordion2_5')  5. Leggings occaecat craft beer farm-to-table, raw denim aesthetic ? 
+                                      |                                                             
+                                      #accordion2_5.panel-collapse.collapse
+                                        .panel-body
+                                          | 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                          | nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                          | craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                                          | wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et
+                                    |                                                         
+                                    .panel.panel-default
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#accordion2_6')  6. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth ? 
+                                      |                                                             
+                                      #accordion2_6.panel-collapse.collapse
+                                        .panel-body
+                                          | 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                          | nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                          | craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                                          | wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et
+                                    |                                                         
+                                    .panel.panel-default
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#accordion2_7')  7. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft ? 
+                                      |                                                             
+                                      #accordion2_7.panel-collapse.collapse
+                                        .panel-body
+                                          | 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                          | nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                          | craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                                          | wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et
+                                |                                                 
+                                #tab_3.tab-pane
+                                  #accordion3.panel-group
+                                    .panel.panel-danger
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion3', href='#accordion3_1')
+                                            | 1. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry ?
+                                      |                                                             
+                                      #accordion3_1.panel-collapse.collapse.in
+                                        .panel-body
+                                          p
+                                            | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                            | laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                          |                                                                     
+                                          p
+                                            | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                                            | laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                          |                                                                     
+                                          p
+                                            | Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+                                            | craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+                                            | you probably haven&apos;t heard of them accusamus labore sustainable VHS.
+                                    |                                                         
+                                    .panel.panel-success
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion3', href='#accordion3_2')
+                                            | 2. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry ?
+                                      |                                                             
+                                      #accordion3_2.panel-collapse.collapse
+                                        .panel-body
+                                          | Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Anim pariatur cliche reprehenderit,
+                                          | enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                                          | moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
+                                          | ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable
+                                          | VHS.
+                                    |                                                         
+                                    .panel.panel-default
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion3', href='#accordion3_3')  3. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor ? 
+                                      |                                                             
+                                      #accordion3_3.panel-collapse.collapse
+                                        .panel-body
+                                          | Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Anim pariatur cliche reprehenderit,
+                                          | enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                                          | moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
+                                          | ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable
+                                          | VHS.
+                                    |                                                         
+                                    .panel.panel-default
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion3', href='#accordion3_4')  4. Wolf moon officia aute, non cupidatat skateboard dolor brunch ? 
+                                      |                                                             
+                                      #accordion3_4.panel-collapse.collapse
+                                        .panel-body
+                                          | 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                          | nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                          | craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS.
+                                    |                                                         
+                                    .panel.panel-default
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion3', href='#accordion3_5')  5. Leggings occaecat craft beer farm-to-table, raw denim aesthetic ? 
+                                      |                                                             
+                                      #accordion3_5.panel-collapse.collapse
+                                        .panel-body
+                                          | 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                          | nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                          | craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                                          | wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et
+                                    |                                                         
+                                    .panel.panel-default
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion3', href='#accordion3_6')  6. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth ? 
+                                      |                                                             
+                                      #accordion3_6.panel-collapse.collapse
+                                        .panel-body
+                                          | 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                          | nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                          | craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                                          | wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et
+                                    |                                                         
+                                    .panel.panel-default
+                                      .panel-heading
+                                        h4.panel-title
+                                          a.accordion-toggle(data-toggle='collapse', data-parent='#accordion3', href='#accordion3_7')  7. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft ? 
+                                      |                                                             
+                                      #accordion3_7.panel-collapse.collapse
+                                        .panel-body
+                                          | 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee
+                                          | nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+                                          | craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                                          | wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et
+                        // end tab-pane
+                // END CONTENT BODY
+
+
+    .page-footer
+          .page-footer-inner
+            | 2016 &copy; Dashboard by Ziviso.            
+          .scroll-to-top
+            i.icon-arrow-up
+        // END FOOTER
+        //if lt IE 9
+          script(src='../assets/global/plugins/respond.min.js')
+          script(src='../assets/global/plugins/excanvas.min.js')
+        // BEGIN CORE PLUGINS
+    script(src='../assets/global/plugins/jquery.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/bootstrap/js/bootstrap.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/js.cookie.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jquery.blockui.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/uniform/jquery.uniform.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js', type='text/javascript')
+    // END CORE PLUGINS
+    // BEGIN PAGE LEVEL PLUGINS
+    script(src='../assets/global/plugins/moment.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/morris/morris.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/morris/raphael-min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/counterup/jquery.waypoints.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/counterup/jquery.counterup.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/amcharts/amcharts.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/amcharts/serial.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/amcharts/pie.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/amcharts/radar.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/amcharts/themes/light.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/amcharts/themes/patterns.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/amcharts/themes/chalk.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/ammap/ammap.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/ammap/maps/js/worldLow.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/amcharts/amstockcharts/amstock.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/fullcalendar/fullcalendar.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/flot/jquery.flot.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/flot/jquery.flot.resize.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/flot/jquery.flot.categories.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jquery.sparkline.min.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js', type='text/javascript')
+    |         
+    script(src='../assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js', type='text/javascript')
+    script(src='../assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js', type='text/javascript')
+
+    // END PAGE LEVEL PLUGINS
+    // BEGIN THEME GLOBAL SCRIPTS
+    script(src='../assets/global/scripts/app.min.js', type='text/javascript')
+    // END THEME GLOBAL SCRIPTS
+    // BEGIN PAGE LEVEL SCRIPTS
+    script(src='../assets/pages/scripts/dashboard.min.js', type='text/javascript')
+    script(src='../assets/pages/scripts/components-bootstrap-select.min.js', type='text/javascript')
+    script(src='../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js', type='text/javascript')
+    script(src='../assets/pages/scripts/ui-modals.min.js', type='text/javascript')
+
+
+    // END PAGE LEVEL SCRIPTS
+    // BEGIN THEME LAYOUT SCRIPTS
+    script(src='../assets/layouts/layout2/scripts/layout.min.js', type='text/javascript')
+    |         
+    script(src='../assets/layouts/layout2/scripts/demo.min.js', type='text/javascript')
+    |         
+    script(src='../assets/layouts/global/scripts/quick-sidebar.min.js', type='text/javascript')
+    // END THEME LAYOUT SCRIPTS

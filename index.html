@@ -12,6 +12,7 @@
     <meta content="" name="description">
     <meta content="" name="author">
     <!-- BEGIN GLOBAL MANDATORY STYLES-->
+    <!-- BEGIN GLOBAL MANDATORY STYLES-->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all" rel="stylesheet" type="text/css">
     <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
@@ -19,25 +20,24 @@
     <link href="../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
     <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css">
     <!-- END GLOBAL MANDATORY STYLES-->
-    <!-- BEGIN PAGE LEVEL PLUGIN STYLES-->
+    <!-- BEGIN PAGE LEVEL PLUGINS-->
     <link href="../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css">
     <link href="../assets/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css">
-    <!-- END PAGE LEVEL PLUGIN STYLES-->
-    <!-- BEGIN PAGE STYLES-->
-    <link href="../../assets/admin/pages/css/tasks.css" rel="stylesheet" type="text/css">
-    <!-- END PAGE STYLES-->
-    <!-- BEGIN THEME STYLES-->
-    <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css">
-    <link href="../assets/layouts/layout2/css/layout.min.css" rel="stylesheet" type="text/css">
+    <!-- END PAGE LEVEL PLUGINS-->
+    <!-- BEGIN THEME GLOBAL STYLES-->
     <link id="style_components" href="../assets/global/css/components.min.css" rel="stylesheet" type="text/css">
-    <link id="style_color" href="../assets/layouts/layout2/css/themes/blue.min.css" rel="stylesheet" type="text/css">
-    <link href="../assets/layouts/layout2/css/custom.min.css" rel="stylesheet" type="text/css">
-    <!-- END THEME STYLES-->
+    <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css">
+    <!-- END THEME GLOBAL STYLES-->
+    <!-- BEGIN THEME LAYOUT STYLES-->
+    <link href="../assets/layouts/layout4/css/layout.min.css" rel="stylesheet" type="text/css">
+    <link id="style_color" href="../assets/layouts/layout4/css/themes/light.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/layouts/layout4/css/custom.min.css" rel="stylesheet" type="text/css">
+    <!-- END THEME LAYOUT STYLES-->
     <link rel="shortcut icon" href="favicon.ico">
+    <!-- END HEAD-->
   </head>
-  <!-- END HEAD-->
   <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid">
     <div class="page-header navbar navbar-fixed-top">
       <!-- BEGIN HEADER INNER-->
@@ -83,10 +83,10 @@
       <div class="page-sidebar-wrapper">
         <div class="page-sidebar navbar-collapse collapse">
           <ul data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="300" class="page-sidebar-menu page-header-fixed page-sidebar-menu-hover-submenu"> 
-            <li class="nav-item start active open"><a href="javascript:;" class="nav-link nav-toggle"><i class="icon-home"></i><span class="title">Dashboard</span></a></li>
-            <li class="nav-item start active open"><a href="javascript:;" class="nav-link nav-toggle"><i class="icon-folder"></i><span class="title">Messages</span></a></li>
-            <li class="nav-item start active open"><a href="javascript:;" class="nav-link nav-toggle"><i class="icon-user"></i><span class="title">Members</span></a></li>
-            <li class="nav-item start active open"><a href="javascript:;" class="nav-link nav-toggle"><i class="icon-layers"></i><span class="title">Calender</span></a></li>
+            <li class="nav-item start active open"><a href="index.html" class="nav-link nav-toggle"><i class="icon-home"></i><span class="title">Dashboard</span></a></li>
+            <li class="nav-item start"><a href="messages.html" class="nav-link nav-toggle"><i class="icon-folder"></i><span class="title">Messages</span></a></li>
+            <li class="nav-item start"><a href="members.html" class="nav-link nav-toggle"><i class="icon-user"></i><span class="title">Members</span></a></li>
+            <li class="nav-item start"><a href="calender.html" class="nav-link nav-toggle"><i class="icon-layers"></i><span class="title">Calender</span></a></li>
           </ul>
         </div>
       </div>
@@ -368,7 +368,7 @@
             <div class="col-md-6 col-sm-6">
               <div class="portlet light">
                 <div class="portlet-title tabbable-line">
-                  <div class="caption"><i class="icon-social-twitter font-green"></i><span class="caption-subject font-green bold uppercase">Quick Actions</span></div>
+                  <div class="caption"><i class="icon-user font-green"></i><span class="caption-subject font-green bold uppercase">Member Management</span></div>
                   <ul class="nav nav-tabs">
                     <li class="active"><a href="#tab_actions_pending" data-toggle="tab"> Pending </a></li>
                     <li><a href="#tab_actions_completed" data-toggle="tab"> Completed</a></li>
@@ -380,21 +380,57 @@
                       <!-- BEGIN: Actions-->
                       <div class="mt-actions">
                         <div class="mt-action">
-                          <div class="mt-action-img"><img src="../assets/pages/media/users/avatar10.jpg"></div>
                           <div class="mt-action-body">
                             <div class="mt-action-row">
                               <div class="mt-action-info">
-                                <div class="mt-action-icon"><i class="icon-magnet"></i></div>
-                                <div class="mt-action-details"><span class="mt-action-author">Natasha Kim</span>
-                                  <p class="mt-action-desc">pending for approval pending for approval pending for approval pending for approval</p>
+                                <div class="mt-action-icon"><i class="icon-tick"></i></div>
+                                <div class="mt-action-details"><span class="mt-action-author"> <a href(#)>Natasha Kim</a></span>
+                                  <p class="mt-action-desc">Applied to Join Women's Gym</p>
                                 </div>
-                                <div class="mt-action-datetime"><span class="mt-action-date"> </span><span class="mt-action-dot bg-green"></span><span class="mt-action-time">9:30-13:00</span></div>
+                                <div class="mt-action-datetime"><span class="mt-action-date">3 June</span><span class="mt-action-dot bg-red"></span><span class="mt-action-time">9:30am</span></div>
                                 <div class="mt-action-buttons">
                                   <div class="btn-group btn-group-circle">
                                     <button type="button" class="btn btn-outline green btn-sm">Appove</button>
                                     <button type="button" class="btn btn-outline red btn-sm">Reject</button>
                                   </div>
                                 </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mt-action">
+                          <div class="mt-action-body">
+                            <div class="mt-action-row">
+                              <div class="mt-action-info">
+                                <div class="mt-action-icon"><i class="icon-tick"></i></div>
+                                <div class="mt-action-details"><span class="mt-action-author"> <a href="#">Natasha Kim</a></span>
+                                  <p class="mt-action-desc">Applied to Join Women's Gym</p>
+                                </div>
+                                <div class="mt-action-datetime"><span class="mt-action-date">3 June</span><span class="mt-action-dot bg-red"></span><span class="mt-action-time">9:30am</span></div>
+                                <div class="mt-action-buttons">
+                                  <div class="btn-group btn-group-circle">
+                                    <button type="button" class="btn btn-outline green btn-sm">Appove</button>
+                                    <button type="button" class="btn btn-outline red btn-sm">Reject</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="tab_actions_completed" class="tab-pane">
+                      <div class="mt-actions"> 
+                        <div class="mt-action"> 
+                          <div class="mt-action-body"> 
+                            <div class="mt-action-row"> 
+                              <div class="mt-action-info">
+                                <div class="mt-action-icon"><i class="icon-tick"></i></div>
+                                <div class="mt-action-details"><span class="mt-action-author"> <a href="#">Michael Chirwizi</a></span>
+                                  <p class="mt-action-desc">Joined Grade 2 </p>
+                                  <p class="mt-action-desc">Joined Grade 7</p>
+                                </div>
+                                <div class="mt-action-datetime"><span class="mt-action-date">4 June</span><span class="mt-action-dot bg-green"></span><span class="mt-action-time">9:30am</span></div>
                               </div>
                             </div>
                           </div>
@@ -465,6 +501,7 @@
   <!-- END THEME GLOBAL SCRIPTS-->
   <!-- BEGIN PAGE LEVEL SCRIPTS-->
   <script src="../assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
+  <script src="../assets/pages/scripts/ui-modals.min.js" type="text/javascript"></script>
   <!-- END PAGE LEVEL SCRIPTS-->
   <!-- BEGIN THEME LAYOUT SCRIPTS-->
   <script src="../assets/layouts/layout2/scripts/layout.min.js" type="text/javascript"></script>        

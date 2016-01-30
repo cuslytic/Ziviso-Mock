@@ -11,6 +11,7 @@ html
       meta(content='', name='description')
       meta(content='', name='author')
       // BEGIN GLOBAL MANDATORY STYLES
+      // BEGIN GLOBAL MANDATORY STYLES
       link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all', rel='stylesheet', type='text/css')
       link(href='../assets/global/plugins/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
       link(href='../assets/global/plugins/simple-line-icons/simple-line-icons.min.css', rel='stylesheet', type='text/css')
@@ -18,26 +19,23 @@ html
       link(href='../assets/global/plugins/uniform/css/uniform.default.css', rel='stylesheet', type='text/css')
       link(href='../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css', rel='stylesheet', type='text/css')
       // END GLOBAL MANDATORY STYLES
-      // BEGIN PAGE LEVEL PLUGIN STYLES
+      // BEGIN PAGE LEVEL PLUGINS
       link(href='../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css', rel='stylesheet', type='text/css')
-      link(href='../assets/global/plugins/morris/morris.css', rel='stylesheet', type='text/css')             
-      link(href='../assets/global/plugins/fullcalendar/fullcalendar.min.css', rel='stylesheet', type='text/css')         
+      link(href='../assets/global/plugins/morris/morris.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/fullcalendar/fullcalendar.min.css', rel='stylesheet', type='text/css')
       link(href='../assets/global/plugins/jqvmap/jqvmap/jqvmap.css', rel='stylesheet', type='text/css')
-
-      // END PAGE LEVEL PLUGIN STYLES
-      // BEGIN PAGE STYLES
-      link(href='../../assets/admin/pages/css/tasks.css', rel='stylesheet', type='text/css')
-      // END PAGE STYLES
-      // BEGIN THEME STYLES
-      link(href='../assets/global/css/plugins.min.css', rel='stylesheet', type='text/css')
-      link(href='../assets/layouts/layout2/css/layout.min.css', rel='stylesheet', type='text/css')
+      // END PAGE LEVEL PLUGINS
+      // BEGIN THEME GLOBAL STYLES
       link#style_components(href='../assets/global/css/components.min.css', rel='stylesheet', type='text/css')
-      link#style_color(href='../assets/layouts/layout2/css/themes/blue.min.css', rel='stylesheet', type='text/css')
-      link(href='../assets/layouts/layout2/css/custom.min.css', rel='stylesheet', type='text/css')
-
-      // END THEME STYLES
+      link(href='../assets/global/css/plugins.min.css', rel='stylesheet', type='text/css')
+      // END THEME GLOBAL STYLES
+      // BEGIN THEME LAYOUT STYLES
+      link(href='../assets/layouts/layout4/css/layout.min.css', rel='stylesheet', type='text/css')
+      link#style_color(href='../assets/layouts/layout4/css/themes/light.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/layouts/layout4/css/custom.min.css', rel='stylesheet', type='text/css')
+      // END THEME LAYOUT STYLES
       link(rel='shortcut icon', href='favicon.ico')
-    // END HEAD
+      // END HEAD
     
     body.page-header-fixed.page-sidebar-closed-hide-logo.page-container-bg-solid
         .page-header.navbar.navbar-fixed-top
@@ -111,19 +109,19 @@ html
                 .page-sidebar.navbar-collapse.collapse
                     ul.page-sidebar-menu.page-header-fixed.page-sidebar-menu-hover-submenu(data-keep-expanded='false', data-auto-scroll='true', data-slide-speed='300') 
                         li.nav-item.start.active.open
-                            a.nav-link.nav-toggle(href='javascript:;')
+                            a.nav-link.nav-toggle(href='index.html')
                                 i.icon-home
                                 span.title Dashboard
-                        li.nav-item.start.active.open
-                            a.nav-link.nav-toggle(href='javascript:;')
+                        li.nav-item.start
+                            a.nav-link.nav-toggle(href='messages.html')
                                 i.icon-folder
                                 span.title Messages
-                        li.nav-item.start.active.open
-                            a.nav-link.nav-toggle(href='javascript:;')
+                        li.nav-item.start
+                            a.nav-link.nav-toggle(href='members.html')
                                 i.icon-user
                                 span.title Members
-                        li.nav-item.start.active.open
-                            a.nav-link.nav-toggle(href='javascript:;')
+                        li.nav-item.start
+                            a.nav-link.nav-toggle(href='calender.html')
                                 i.icon-layers
                                 span.title Calender
                                 
@@ -477,8 +475,8 @@ html
                           .portlet.light
                             .portlet-title.tabbable-line
                               .caption
-                                i.icon-social-twitter.font-green
-                                span.caption-subject.font-green.bold.uppercase Quick Actions
+                                i.icon-user.font-green
+                                span.caption-subject.font-green.bold.uppercase Member Management
                               ul.nav.nav-tabs
                                 li.active
                                   a(href='#tab_actions_pending', data-toggle='tab')  Pending 
@@ -491,26 +489,63 @@ html
                                     // BEGIN: Actions
                                     .mt-actions
                                       .mt-action
-                                        .mt-action-img
-                                          img(src='../assets/pages/media/users/avatar10.jpg')
                                         .mt-action-body
                                           .mt-action-row
                                             .mt-action-info
                                               .mt-action-icon
-                                                i.icon-magnet
+                                                i.icon-tick
                                               .mt-action-details
-                                                span.mt-action-author Natasha Kim
+                                                span.mt-action-author 
+                                                  a(href(#)) Natasha Kim
                                                 p.mt-action-desc
-                                                  | pending for approval pending for approval pending for approval pending for approval
+                                                  | Applied to Join Women's Gym
                                               .mt-action-datetime
-                                                span.mt-action-date 
-                                                span.mt-action-dot.bg-green
-                                                span.mt-action-time 9:30-13:00
+                                                span.mt-action-date 3 June
+                                                span.mt-action-dot.bg-red
+                                                span.mt-action-time 9:30am
                                               .mt-action-buttons
                                                 .btn-group.btn-group-circle
                                                   button.btn.btn-outline.green.btn-sm(type='button') Appove
                                                   button.btn.btn-outline.red.btn-sm(type='button') Reject
-
+                                      .mt-action
+                                        .mt-action-body
+                                          .mt-action-row
+                                            .mt-action-info
+                                              .mt-action-icon
+                                                i.icon-tick
+                                              .mt-action-details
+                                                span.mt-action-author 
+                                                  a(href="#") Natasha Kim
+                                                p.mt-action-desc
+                                                  | Applied to Join Women's Gym
+                                              .mt-action-datetime
+                                                span.mt-action-date 3 June
+                                                span.mt-action-dot.bg-red
+                                                span.mt-action-time 9:30am
+                                              .mt-action-buttons
+                                                .btn-group.btn-group-circle
+                                                  button.btn.btn-outline.green.btn-sm(type='button') Appove
+                                                  button.btn.btn-outline.red.btn-sm(type='button') Reject
+                                                  
+                                  #tab_actions_completed.tab-pane
+                                    .mt-actions 
+                                      .mt-action 
+                                        .mt-action-body 
+                                          .mt-action-row 
+                                            .mt-action-info
+                                              .mt-action-icon
+                                                i.icon-tick
+                                              .mt-action-details
+                                                span.mt-action-author 
+                                                  a(href="#") Michael Chirwizi
+                                                p.mt-action-desc
+                                                  | Joined Grade 2 
+                                                p.mt-action-desc
+                                                  | Joined Grade 7
+                                              .mt-action-datetime
+                                                span.mt-action-date 4 June
+                                                span.mt-action-dot.bg-green
+                                                span.mt-action-time 9:30am
 
     .page-footer
           .page-footer-inner
@@ -602,6 +637,8 @@ html
     // END THEME GLOBAL SCRIPTS
     // BEGIN PAGE LEVEL SCRIPTS
     script(src='../assets/pages/scripts/dashboard.min.js', type='text/javascript')
+    script(src='../assets/pages/scripts/ui-modals.min.js', type='text/javascript')
+
     // END PAGE LEVEL SCRIPTS
     // BEGIN THEME LAYOUT SCRIPTS
     script(src='../assets/layouts/layout2/scripts/layout.min.js', type='text/javascript')
