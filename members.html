@@ -102,8 +102,41 @@
                   <div class="caption"><i class="icon-user font-purple-soft"></i><span class="caption-subject font-purple-soft bold uppercase">Members</span></div>
                   <div class="row pull-right">
                     <div class="col-md-6">
-                      <div class="btn-group">
-                        <button id="sample_editable_1_new" class="btn sbold green">New Group<i class="fa fa-plus"></i></button>
+                      <div class="btn-group"><a id="sample_editable_1_new" data-toggle="modal" href="#new-group" class="btn sbold green">New Group<i class="fa fa-plus"></i></a></div>
+                    </div>
+                  </div>
+                  <div id="new-group" tabindex="-1" role="basic" aria-hidden="true" class="modal fade draggable-modal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" data-dismiss="modal" aria-hidden="true" class="close"></button>                                                    
+                          <h4 class="modal-title">New Group   </h4>
+                        </div>                                                
+                        <div class="modal-body"> 
+                          <div class="form-group">
+                            <label class="control-label">Group Name    </label>                                                            
+                            <input type="text" placeholder="Awesome Group" class="form-control">
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label">Group Initials<small>.....a code to help you find the group easier</small></label>                                                            
+                            <input type="text" placeholder="AG" class="form-control">
+                          </div>
+                          <div class="form-group form-md-line-input">
+                            <textarea rows="3" placeholder="Brief Group Description" class="form-control"></textarea>
+                            <label for="form_control_1">Textarea input</label>
+                          </div>
+                          <div class="form-group"> 
+                            <label class="control-label">Group Type<br><small>Private groups need approval.<br></small><small>Public groups are open for any member to join.</small></label>
+                            <select class="bs-select form-control">
+                              <option>Public </option>                                                        
+                              <option>Private</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>                                                    
+                          <button type="button" class="btn green">Create </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -208,10 +241,7 @@
                                         <label class="control-label">Mobile Number </label>                                                            
                                         <input type="text" placeholder="+263 737 155 456" class="form-control">
                                       </div>
-                                      <div class="form-group"> 
-                                        <label class="control-label col-md-3">Basic</label>
-                                        <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput">
-                                      </div>
+                                      <div class="form-group"> </div>
                                     </div>
                                     <div class="modal-footer">
                                       <button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>                                                    
@@ -282,7 +312,7 @@
                                     <td>
                                       <input type="checkbox" value="1" class="checkboxes">
                                     </td>
-                                    <td> Tawanda Chigore </td>
+                                    <td> <a data-toggle="modal" href="#cust-profile">Tawanda Chigore </a></td>
                                     <td><a href="mailto:shuxer@gmail.com"> shuxer@gmail.com </a></td>
                                     <td> 120 </td>
                                     <td class="center"> 12 Jan 2012 </td>
@@ -307,11 +337,46 @@
                               <div class="actions">
                                 <div data-toggle="buttons" class="btn-group btn-group-devided">
                                   <label class="btn btn-transparent dark btn-outline btn-circle btn-sm active">
-                                    <input id="option1" type="radio" name="options" class="toggle">Actions
+                                    <input id="option1" type="radio" name="options" class="toggle">Private 
                                   </label>
                                   <label class="btn btn-transparent dark btn-outline btn-circle btn-sm">
-                                    <input id="option2" type="radio" name="options" class="toggle">Settings
-                                  </label>
+                                    <input id="option2" type="radio" name="options" class="toggle">Public 
+                                  </label><a data-toggle="modal" href="#group-settings">Settings </a>
+                                </div>
+                                <div id="group-settings" tabindex="-1" role="basic" aria-hidden="true" class="modal fade draggable-modal">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <button type="button" data-dismiss="modal" aria-hidden="true" class="close"></button>                                                    
+                                        <h4 class="modal-title">Add Member/s  </h4>
+                                      </div>                                                
+                                      <div class="modal-body"> 
+                                        <div class="form-group">
+                                          <label class="control-label">Group Name    </label>                                                            
+                                          <input type="text" placeholder="Group 1" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                          <label class="control-label">Group Initials<small>.....a code to help you find the group easier</small></label>                                                            
+                                          <input type="text" placeholder="G1" class="form-control">
+                                        </div>
+                                        <div class="form-group form-md-line-input">
+                                          <textarea rows="3" placeholder="This is group 1 - an exciting group of people who are full of excitement. Our members are excited unlike the other boring groups." class="form-control"></textarea>
+                                          <label for="form_control_1">Textarea input</label>
+                                        </div>
+                                        <div class="form-group"> 
+                                          <label class="control-label">Group Type<br><small>Private groups need approval.<br></small><small>Public groups are open for any member to join.</small></label>
+                                          <select class="bs-select form-control">
+                                            <option>Public </option>                                                        
+                                            <option>Private</option>
+                                          </select>
+                                        </div><a href="#">If importing from file, to get the correct formatting click here</a>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>                                                    
+                                        <button type="button" class="btn green">Save </button>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -320,7 +385,7 @@
                                 <div class="row">
                                   <div class="col-md-6">
                                     <div class="btn-group">
-                                      <button id="sample_editable_1_new" class="btn sbold green">Add New<i class="fa fa-plus"></i></button>
+                                      <button id="sample_editable_1_new" data-toggle="modal" href="#add-me-1" class="btn sbold green">Add New<i class="fa fa-plus"></i></button>
                                     </div>
                                   </div>
                                   <div class="col-md-6">
@@ -353,14 +418,42 @@
                                     <td>
                                       <input type="checkbox" value="1" class="checkboxes">
                                     </td>
-                                    <td> Tawanda Chigore </td>
+                                    <td> <a data-toggle="modal" href="#cust-profile">Tawanda Chigore </a></td>
                                     <td><a href="mailto:shuxer@gmail.com"> shuxer@gmail.com </a></td>
                                     <td> 120 </td>
                                     <td class="center"> 12 Jan 2012 </td>
-                                    <td><span class="label label-sm label-success"> Grade 1 </span><span class="label label-sm label-warning"> Grade 2</span><span class="label label-sm label-default"> Sports  </span></td>
+                                    <td><span class="label label-sm label-success"> Grade 1 </span><span class="label label-sm label-warning"> Grade 2</span><span class="label label-sm label-default"> Sports</span></td>
                                   </tr>
                                 </tbody>
                               </table>
+                            </div>
+                            <div id="add-me-2" tabindex="-1" role="basic" aria-hidden="true" class="modal fade draggable-modal">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" aria-hidden="true" class="close"></button>                                                    
+                                    <h4 class="modal-title">Add Member/s  </h4>
+                                  </div>                                                
+                                  <div class="modal-body"> 
+                                    <div class="form-group">
+                                      <label class="control-label">Mobile Number </label>                                                            
+                                      <input type="text" placeholder="+263 " class="form-control">
+                                    </div>
+                                    <p>OR </p>
+                                    <div class="form-group">
+                                      <label class="control-label">Import From File </label>
+                                      <div data-provides="fileinput" class="fileinput fileinput-new"><span class="btn green btn-file"><span class="fileinput-new"> Select file </span>                                                            <span class="fileinput-exists"> Change </span>                                                            
+                                          <input type="file" name="..."></span>                                                        <span class="fileinput-filename"> </span> &nbsp;
+                                                                                                <a href="javascript:;" data-dismiss="fileinput" class="close fileinput-exists"> </a>
+                                      </div>
+                                    </div><a href="#">If importing from file, to get the correct formatting click here</a>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>                                                    
+                                    <button type="button" class="btn green">ADD </button>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -378,11 +471,39 @@
                               <div class="actions">
                                 <div data-toggle="buttons" class="btn-group btn-group-devided">
                                   <label class="btn btn-transparent dark btn-outline btn-circle btn-sm active">
-                                    <input id="option1" type="radio" name="options" class="toggle">Actions
+                                    <input id="option1" type="radio" name="options" class="toggle">Private 
                                   </label>
                                   <label class="btn btn-transparent dark btn-outline btn-circle btn-sm">
-                                    <input id="option2" type="radio" name="options" class="toggle">Settings
-                                  </label>
+                                    <input id="option2" type="radio" name="options" class="toggle">Public 
+                                  </label><a data-toggle="modal" href="#group-settings">Settings </a>
+                                </div>
+                                <div id="group-settings" tabindex="-1" role="basic" aria-hidden="true" class="modal fade draggable-modal">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <button type="button" data-dismiss="modal" aria-hidden="true" class="close"></button>                                                    
+                                        <h4 class="modal-title">Add Member/s  </h4>
+                                      </div>                                                
+                                      <div class="modal-body"> 
+                                        <div class="form-group">
+                                          <label class="control-label">Mobile Number </label>                                                            
+                                          <input type="text" placeholder="+263 " class="form-control">
+                                        </div>
+                                        <p>OR </p>
+                                        <div class="form-group">
+                                          <label class="control-label">Import From File </label>
+                                          <div data-provides="fileinput" class="fileinput fileinput-new"><span class="btn green btn-file"><span class="fileinput-new"> Select file </span>                                                            <span class="fileinput-exists"> Change </span>                                                            
+                                              <input type="file" name="..."></span>                                                        <span class="fileinput-filename"> </span> &nbsp;
+                                                                                                    <a href="javascript:;" data-dismiss="fileinput" class="close fileinput-exists"> </a>
+                                          </div>
+                                        </div><a href="#">If importing from file, to get the correct formatting click here</a>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>                                                    
+                                        <button type="button" class="btn green">ADD </button>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -391,7 +512,7 @@
                                 <div class="row">
                                   <div class="col-md-6">
                                     <div class="btn-group">
-                                      <button id="sample_editable_1_new" class="btn sbold green">Add New<i class="fa fa-plus"></i></button>
+                                      <button id="sample_editable_1_new" data-toggle="modal" href="#add-me-2" class="btn sbold green">Add New<i class="fa fa-plus"></i></button>
                                     </div>
                                   </div>
                                   <div class="col-md-6">
@@ -424,7 +545,7 @@
                                     <td>
                                       <input type="checkbox" value="1" class="checkboxes">
                                     </td>
-                                    <td> Tawanda Chigore </td>
+                                    <td> <a data-toggle="modal" href="#cust-profile">Tawanda Chigore </a></td>
                                     <td><a href="mailto:shuxer@gmail.com"> shuxer@gmail.com </a></td>
                                     <td> 120 </td>
                                     <td class="center"> 12 Jan 2012 </td>
@@ -432,6 +553,34 @@
                                   </tr>
                                 </tbody>
                               </table>
+                              <div id="add-me-2" tabindex="-1" role="basic" aria-hidden="true" class="modal fade draggable-modal">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" data-dismiss="modal" aria-hidden="true" class="close"></button>                                                    
+                                      <h4 class="modal-title">Add Member/s  </h4>
+                                    </div>                                                
+                                    <div class="modal-body"> 
+                                      <div class="form-group">
+                                        <label class="control-label">Mobile Number </label>                                                            
+                                        <input type="text" placeholder="+263 " class="form-control">
+                                      </div>
+                                      <p>OR </p>
+                                      <div class="form-group">
+                                        <label class="control-label">Import From File </label>
+                                        <div data-provides="fileinput" class="fileinput fileinput-new"><span class="btn green btn-file"><span class="fileinput-new"> Select file </span>                                                            <span class="fileinput-exists"> Change </span>                                                            
+                                            <input type="file" name="..."></span>                                                        <span class="fileinput-filename"> </span> &nbsp;
+                                                                                                  <a href="javascript:;" data-dismiss="fileinput" class="close fileinput-exists"> </a>
+                                        </div>
+                                      </div><a href="#">If importing from file, to get the correct formatting click here</a>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>                                                    
+                                      <button type="button" class="btn green">ADD</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -462,7 +611,7 @@
                                 <div class="row">
                                   <div class="col-md-6">
                                     <div class="btn-group">
-                                      <button id="sample_editable_1_new" class="btn sbold green">Add New<i class="fa fa-plus"></i></button>
+                                      <button id="sample_editable_1_new" data-toggle="modal" href="#add-me" class="btn sbold green">Add New<i class="fa fa-plus"></i></button>
                                     </div>
                                   </div>
                                   <div class="col-md-6">
@@ -495,14 +644,42 @@
                                     <td>
                                       <input type="checkbox" value="1" class="checkboxes">
                                     </td>
-                                    <td> Tawanda Chigore </td>
+                                    <td> <a data-toggle="modal" href="#cust-profile">Tawanda Chigore </a></td>
                                     <td><a href="mailto:shuxer@gmail.com"> shuxer@gmail.com </a></td>
                                     <td> 120 </td>
                                     <td class="center"> 12 Jan 2012 </td>
-                                    <td><span class="label label-sm label-success"> Grade 1 </span><span class="label label-sm label-warning"> Grade 2</span><span class="label label-sm label-default"> Sports  </span></td>
+                                    <td><span class="label label-sm label-success"> Grade 1 </span><span class="label label-sm label-warning"> Grade 2</span><span class="label label-sm label-default"> Sports </span></td>
                                   </tr>
                                 </tbody>
                               </table>
+                            </div>
+                            <div id="add-me" tabindex="-1" role="basic" aria-hidden="true" class="modal fade draggable-modal">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" data-dismiss="modal" aria-hidden="true" class="close"></button>                                                    
+                                    <h4 class="modal-title">Add Member/s  </h4>
+                                  </div>                                                
+                                  <div class="modal-body"> 
+                                    <div class="form-group">
+                                      <label class="control-label">Mobile Number </label>                                                            
+                                      <input type="text" placeholder="+263 " class="form-control">
+                                    </div>
+                                    <p>OR </p>
+                                    <div class="form-group">
+                                      <label class="control-label">Import From File </label>
+                                      <div data-provides="fileinput" class="fileinput fileinput-new"><span class="btn green btn-file"><span class="fileinput-new"> Select file </span>                                                            <span class="fileinput-exists"> Change </span>                                                            
+                                          <input type="file" name="..."></span>                                                        <span class="fileinput-filename"> </span> &nbsp;
+                                                                                                <a href="javascript:;" data-dismiss="fileinput" class="close fileinput-exists"> </a>
+                                      </div>
+                                    </div><a href="#">If importing from file, to get the correct formatting click here</a>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>                                                    
+                                    <button type="button" class="btn green">ADD </button>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -533,7 +710,7 @@
                                 <div class="row">
                                   <div class="col-md-6">
                                     <div class="btn-group">
-                                      <button id="sample_editable_1_new" class="btn sbold green">Add New<i class="fa fa-plus"></i></button>
+                                      <button id="sample_editable_1_new" data-toggle="modal" href="#add-me-4" class="btn sbold green">Add New<i class="fa fa-plus"></i></button>
                                     </div>
                                   </div>
                                   <div class="col-md-6">
@@ -566,7 +743,7 @@
                                     <td>
                                       <input type="checkbox" value="1" class="checkboxes">
                                     </td>
-                                    <td> Tawanda Chigore </td>
+                                    <td> <a data-toggle="modal" href="#cust-profile">Tawanda Chigore </a></td>
                                     <td><a href="mailto:shuxer@gmail.com"> shuxer@gmail.com </a></td>
                                     <td> 120 </td>
                                     <td class="center"> 12 Jan 2012 </td>

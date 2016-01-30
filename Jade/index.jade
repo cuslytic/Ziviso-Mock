@@ -496,17 +496,37 @@ html
                                                 i.icon-tick
                                               .mt-action-details
                                                 span.mt-action-author 
-                                                  a(href(#)) Natasha Kim
+                                                  a(data-toggle="modal", href="#c-profile") Natasha Kim
                                                 p.mt-action-desc
-                                                  | Applied to Join Women's Gym
+                                                  | Wants to join Women's Fitness Group 
                                               .mt-action-datetime
                                                 span.mt-action-date 3 June
                                                 span.mt-action-dot.bg-red
                                                 span.mt-action-time 9:30am
                                               .mt-action-buttons
-                                                .btn-group.btn-group-circle
-                                                  button.btn.btn-outline.green.btn-sm(type='button') Appove
+                                                .btn-group
+                                                  button.btn.btn-outline.green.btn-sm(type='button') Approve
                                                   button.btn.btn-outline.red.btn-sm(type='button') Reject
+                                    
+                                              #c-profile.modal.fade.draggable-modal(tabindex='-1', role='basic', aria-hidden='true')
+                                                .modal-dialog
+                                                  .modal-content
+                                                    .modal-header
+                                                      button.close(type='button', data-dismiss='modal', aria-hidden='true')
+                                                      |                                                     
+                                                      h4.modal-title Member Profile  
+                                                    |                                                 
+                                                    .modal-body 
+                                                      h4 Name 
+                                                      p Natasha Kim  
+                                                      
+                                                      h4 Membership Status    
+                                                      p Not a Member  
+                                                              
+                                                    .modal-footer
+                                                      button.btn.dark.btn-outline(type='button', data-dismiss='modal') Reject 
+                                                      |                                                     
+                                                      button.btn.green(type='button') Approve  
                                       .mt-action
                                         .mt-action-body
                                           .mt-action-row
@@ -515,18 +535,41 @@ html
                                                 i.icon-tick
                                               .mt-action-details
                                                 span.mt-action-author 
-                                                  a(href="#") Natasha Kim
+                                                  a(data-toggle="modal", href="#k-profile") Radzi Kagawe
                                                 p.mt-action-desc
-                                                  | Applied to Join Women's Gym
+                                                  | Wants to join Zumba Group  
                                               .mt-action-datetime
                                                 span.mt-action-date 3 June
                                                 span.mt-action-dot.bg-red
                                                 span.mt-action-time 9:30am
                                               .mt-action-buttons
-                                                .btn-group.btn-group-circle
-                                                  button.btn.btn-outline.green.btn-sm(type='button') Appove
+                                                .btn-group
+                                                  button.btn.btn-outline.green.btn-sm(type='button') Approve
                                                   button.btn.btn-outline.red.btn-sm(type='button') Reject
-                                                  
+                                    
+                                              #k-profile.modal.fade.draggable-modal(tabindex='-1', role='basic', aria-hidden='true')
+                                                .modal-dialog
+                                                  .modal-content
+                                                    .modal-header
+                                                      button.close(type='button', data-dismiss='modal', aria-hidden='true')
+                                                      |                                                     
+                                                      h4.modal-title Member Profile  
+                                                    |                                                 
+                                                    .modal-body 
+                                                      h4 Name 
+                                                      p Radzi Kagawe   
+                                                      
+                                                      h4 Membership Status    
+                                                      p Current Member   
+                                                      
+                                                      h4 Group Membership    
+                                                      p Womens Fitness Group | Yoga Group | Bootcamp Group 
+                                                              
+                                                    .modal-footer
+                                                      button.btn.dark.btn-outline(type='button', data-dismiss='modal') Reject 
+                                                      |                                                     
+                                                      button.btn.green(type='button') Approve  
+                                                    
                                   #tab_actions_completed.tab-pane
                                     .mt-actions 
                                       .mt-action 
