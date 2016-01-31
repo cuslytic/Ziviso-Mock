@@ -1,0 +1,1070 @@
+doctype html
+html(lang='en')
+  // <![endif]
+html
+    // BEGIN HEAD
+    head
+      meta(charset='utf-8')
+      title Ziviso Dashboard
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      meta(content='width=device-width, initial-scale=1', name='viewport')
+      meta(content='', name='description')
+      meta(content='', name='author')
+      // BEGIN GLOBAL MANDATORY STYLES
+      // BEGIN GLOBAL MANDATORY STYLES
+      link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/simple-line-icons/simple-line-icons.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/bootstrap/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/uniform/css/uniform.default.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css', rel='stylesheet', type='text/css')
+      // END GLOBAL MANDATORY STYLES
+      // BEGIN PAGE LEVEL PLUGINS
+      link(href='../assets/global/plugins/select2/css/select2.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/select2/css/select2-bootstrap.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/morris/morris.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/fullcalendar/fullcalendar.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/jqvmap/jqvmap/jqvmap.css', rel='stylesheet', type='text/css')
+      // END PAGE LEVEL PLUGINS
+      // BEGIN THEME GLOBAL STYLES
+      link#style_components(href='../assets/global/css/components.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/css/plugins.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css', rel='stylesheet', type='text/css')
+      link(href='../assets/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css', rel='stylesheet', type='text/css')
+      
+      // END THEME GLOBAL STYLES
+      // BEGIN THEME LAYOUT STYLES
+      link(href='../assets/layouts/layout4/css/layout.min.css', rel='stylesheet', type='text/css')
+      link#style_color(href='../assets/layouts/layout4/css/themes/light.min.css', rel='stylesheet', type='text/css')
+      link(href='../assets/layouts/layout4/css/custom.min.css', rel='stylesheet', type='text/css')
+      // END THEME LAYOUT STYLES
+      link(rel='shortcut icon', href='favicon.ico')
+      // END HEAD
+    
+    
+    body.page-header-fixed.page-sidebar-closed-hide-logo.page-container-bg-solid
+        .page-header.navbar.navbar-fixed-top
+          // BEGIN HEADER INNER
+          .page-header-inner
+            // BEGIN LOGO
+            .page-logo
+              a(href='index.html')
+                img.logo-default(src='../assets/layouts/layout2/img/logo-default.png', alt='logo')
+              |                     
+              .menu-toggler.sidebar-toggler
+                // DOC: Remove the above "hide" to enable the sidebar toggler button on header
+            // END LOGO
+            // BEGIN RESPONSIVE MENU TOGGLER
+            a.menu-toggler.responsive-toggler(href='javascript:;', data-toggle='collapse', data-target='.navbar-collapse')  
+            // END RESPONSIVE MENU TOGGLER
+            // BEGIN PAGE ACTIONS
+            // DOC: Remove "hide" class to enable the page header actions
+                // DOC: Remove the above "hide" to enable the sidebar toggler button on header
+            .page-top
+              // BEGIN HEADER SEARCH BOX
+              // DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box
+              form.search-form.search-form-expanded(action='page_general_search_3.html', method='GET')
+                .input-group
+                  input.form-control(type='text', placeholder='Search...', name='query')
+                  |                             
+                  span.input-group-btn
+                    a.btn.submit(href='javascript:;')
+                      i.icon-magnifier
+              .ul.nav.nav-bar-nav.pull-right
+                li.dropdown.dropdown-user
+                    a.dropdown-toggle(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
+                      img.img-circle(alt='', src='../assets/layouts/layout2/img/avatar3_small.jpg')
+                      |                                     
+                      span.username.username-hide-on-mobile  Hi Tatenda,
+                      |                                     
+                      i.fa.fa-angle-down
+                                                    
+                    ul.dropdown-menu.dropdown-menu-default
+                      li
+                        a(href='profile.html')
+                          i.icon-user
+                          |  My Profile
+                      |                                     
+                      li
+                        a(href='calendar.html')
+                          i.icon-calendar
+                          |  My Calendar
+                      |                                     
+                      li
+                        a(href='messages.html')
+                          i.icon-envelope-open
+                          |  Messages
+                          |                                             
+                          span.badge.badge-danger  3                                  
+                      |                                     
+                      li.divider  
+                      |                                     
+                      li
+                        a(href='lockscreen.html')
+                          i.icon-lock
+                          |  Lock Screen
+                      |                                     
+                      li
+                        a(href='log-in.html')
+                          i.icon-key
+                          |  Log Out
+        .clearfix
+        .page-container
+            .page-sidebar-wrapper
+                .page-sidebar.navbar-collapse.collapse
+                    ul.page-sidebar-menu.page-header-fixed.page-sidebar-menu-hover-submenu(data-keep-expanded='false', data-auto-scroll='true', data-slide-speed='300') 
+                        li.nav-item.start
+                            a.nav-link.nav-toggle(href='index.html')
+                                i.icon-home
+                                span.title Dashboard
+                        li.nav-item.start
+                            a.nav-link.nav-toggle(href='messages.html')
+                                i.icon-folder
+                                span.title Messages
+                        li.nav-item.start
+                            a.nav-link.nav-toggle(href='members.html')
+                                i.icon-user
+                                span.title Members
+                        li.nav-item.start
+                            a.nav-link.nav-toggle(href='calender.html')
+                                i.icon-layers
+                                span.title Calender
+                        li.nav-item.start.active.open
+                            a.nav-link.nav-toggle(href='#')
+                                i.icon-wrench
+                                span.title Account Settings
+                
+            .page-content-wrapper
+                .page-content
+                    .row
+                      .col-md-12
+                      #form_wizard_1.portlet.light
+                        .portlet-title
+                          .caption
+                            i.icon-layers.font-red
+                            |                                         
+                            span.caption-subject.font-red.bold.uppercase
+                              | Register -
+                              span.step-title  Step 1 of 4 
+                          |                                     
+                          .actions
+                            a.btn.btn-circle.btn-icon-only.btn-default(href='javascript:;')
+                              i.icon-cloud-upload
+                            |                                         
+                            a.btn.btn-circle.btn-icon-only.btn-default(href='javascript:;')
+                              i.icon-wrench
+                            |                                         
+                            a.btn.btn-circle.btn-icon-only.btn-default(href='javascript:;')
+                              i.icon-trash
+                        |                                 
+                        .portlet-body.form
+                          form#submit_form.form-horizontal(action='#', method='POST')
+                            .form-wizard
+                              .form-body
+                                ul.nav.nav-pills.nav-justified.steps
+                                  li
+                                    a.step(href='#tab1', data-toggle='tab')
+                                      span.number  1 
+                                      |                                                             
+                                      span.desc
+                                        i.fa.fa-check
+                                        |  Account Setup
+                                  |                                                     
+                                  li
+                                    a.step(href='#tab2', data-toggle='tab')
+                                      span.number  2 
+                                      |                                                             
+                                      span.desc
+                                        i.fa.fa-check
+                                        |  Profile Setup
+                                  |                                                     
+                                  li
+                                    a.step.active(href='#tab3', data-toggle='tab')
+                                      span.number  3 
+                                      |                                                             
+                                      span.desc
+                                        i.fa.fa-check
+                                        |  Billing Setup
+                                  |                                                     
+                                  li
+                                    a.step(href='#tab4', data-toggle='tab')
+                                      span.number  4 
+                                      |                                                             
+                                      span.desc
+                                        i.fa.fa-check
+                                        |  Confirm
+                                |                                                 
+                                #bar.progress.progress-striped(role='progressbar')
+                                  .progress-bar.progress-bar-success  
+                                |                                                 
+                                .tab-content
+                                  .alert.alert-danger.display-none
+                                    button.close(data-dismiss='alert')
+                                    |  You have some form errors. Please check below.
+                                  |                                                     
+                                  .alert.alert-success.display-none
+                                    button.close(data-dismiss='alert')
+                                    |  Your form validation is successful!
+                                  |                                                     
+                                  #tab1.tab-pane.active
+                                    h3.block Provide your account details
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3
+                                        | Username
+                                        span.required  * 
+                                      |                                                             
+                                      .col-md-4
+                                        input.form-control(type='text', name='username')
+                                        |                                                                 
+                                        span.help-block  Provide your username 
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3
+                                        | Password
+                                        span.required  * 
+                                      |                                                             
+                                      .col-md-4
+                                        input#submit_form_password.form-control(type='password', name='password')
+                                        |                                                                 
+                                        span.help-block  Provide your password. 
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3
+                                        | Confirm Password
+                                        span.required  * 
+                                      |                                                             
+                                      .col-md-4
+                                        input.form-control(type='password', name='rpassword')
+                                        |                                                                 
+                                        span.help-block  Confirm your password 
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3
+                                        | Email
+                                        span.required  * 
+                                      |                                                             
+                                      .col-md-4
+                                        input.form-control(type='text', name='email')
+                                        |                                                                 
+                                        span.help-block  Provide your email address 
+                                  |                                                     
+                                  #tab2.tab-pane
+                                    h3.block Provide your profile details
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3
+                                        | Fullname
+                                        span.required  * 
+                                      |                                                             
+                                      .col-md-4
+                                        input.form-control(type='text', name='fullname')
+                                        |                                                                 
+                                        span.help-block  Provide your fullname 
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3
+                                        | Phone Number
+                                        span.required  * 
+                                      |                                                             
+                                      .col-md-4
+                                        input.form-control(type='text', name='phone')
+                                        |                                                                 
+                                        span.help-block  Provide your phone number 
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3
+                                        | Gender
+                                        span.required  * 
+                                      |                                                             
+                                      .col-md-4
+                                        .radio-list
+                                          label
+                                            input(type='radio', name='gender', value='M', data-title='Male')
+                                            |  Male
+                                          |                                                                     
+                                          label
+                                            input(type='radio', name='gender', value='F', data-title='Female')
+                                            |  Female
+                                        |                                                                 
+                                        #form_gender_error  
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3
+                                        | Address
+                                        span.required  * 
+                                      |                                                             
+                                      .col-md-4
+                                        input.form-control(type='text', name='address')
+                                        |                                                                 
+                                        span.help-block  Provide your street address 
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3
+                                        | City/Town
+                                        span.required  * 
+                                      |                                                             
+                                      .col-md-4
+                                        input.form-control(type='text', name='city')
+                                        |                                                                 
+                                        span.help-block  Provide your city or town 
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3 Country
+                                      |                                                             
+                                      .col-md-4
+                                        select#country_list.form-control(name='country')
+                                          option(value='')
+                                          |                                                                     
+                                          option(value='AF') Afghanistan
+                                          |                                                                     
+                                          option(value='AL') Albania
+                                          |                                                                     
+                                          option(value='DZ') Algeria
+                                          |                                                                     
+                                          option(value='AS') American Samoa
+                                          |                                                                     
+                                          option(value='AD') Andorra
+                                          |                                                                     
+                                          option(value='AO') Angola
+                                          |                                                                     
+                                          option(value='AI') Anguilla
+                                          |                                                                     
+                                          option(value='AR') Argentina
+                                          |                                                                     
+                                          option(value='AM') Armenia
+                                          |                                                                     
+                                          option(value='AW') Aruba
+                                          |                                                                     
+                                          option(value='AU') Australia
+                                          |                                                                     
+                                          option(value='AT') Austria
+                                          |                                                                     
+                                          option(value='AZ') Azerbaijan
+                                          |                                                                     
+                                          option(value='BS') Bahamas
+                                          |                                                                     
+                                          option(value='BH') Bahrain
+                                          |                                                                     
+                                          option(value='BD') Bangladesh
+                                          |                                                                     
+                                          option(value='BB') Barbados
+                                          |                                                                     
+                                          option(value='BY') Belarus
+                                          |                                                                     
+                                          option(value='BE') Belgium
+                                          |                                                                     
+                                          option(value='BZ') Belize
+                                          |                                                                     
+                                          option(value='BJ') Benin
+                                          |                                                                     
+                                          option(value='BM') Bermuda
+                                          |                                                                     
+                                          option(value='BT') Bhutan
+                                          |                                                                     
+                                          option(value='BO') Bolivia
+                                          |                                                                     
+                                          option(value='BA') Bosnia and Herzegowina
+                                          |                                                                     
+                                          option(value='BW') Botswana
+                                          |                                                                     
+                                          option(value='BV') Bouvet Island
+                                          |                                                                     
+                                          option(value='BR') Brazil
+                                          |                                                                     
+                                          option(value='IO') British Indian Ocean Territory
+                                          |                                                                     
+                                          option(value='BN') Brunei Darussalam
+                                          |                                                                     
+                                          option(value='BG') Bulgaria
+                                          |                                                                     
+                                          option(value='BF') Burkina Faso
+                                          |                                                                     
+                                          option(value='BI') Burundi
+                                          |                                                                     
+                                          option(value='KH') Cambodia
+                                          |                                                                     
+                                          option(value='CM') Cameroon
+                                          |                                                                     
+                                          option(value='CA') Canada
+                                          |                                                                     
+                                          option(value='CV') Cape Verde
+                                          |                                                                     
+                                          option(value='KY') Cayman Islands
+                                          |                                                                     
+                                          option(value='CF') Central African Republic
+                                          |                                                                     
+                                          option(value='TD') Chad
+                                          |                                                                     
+                                          option(value='CL') Chile
+                                          |                                                                     
+                                          option(value='CN') China
+                                          |                                                                     
+                                          option(value='CX') Christmas Island
+                                          |                                                                     
+                                          option(value='CC') Cocos (Keeling) Islands
+                                          |                                                                     
+                                          option(value='CO') Colombia
+                                          |                                                                     
+                                          option(value='KM') Comoros
+                                          |                                                                     
+                                          option(value='CG') Congo
+                                          |                                                                     
+                                          option(value='CD') Congo, the Democratic Republic of the
+                                          |                                                                     
+                                          option(value='CK') Cook Islands
+                                          |                                                                     
+                                          option(value='CR') Costa Rica
+                                          |                                                                     
+                                          option(value='CI') Cote d&apos;Ivoire
+                                          |                                                                     
+                                          option(value='HR') Croatia (Hrvatska)
+                                          |                                                                     
+                                          option(value='CU') Cuba
+                                          |                                                                     
+                                          option(value='CY') Cyprus
+                                          |                                                                     
+                                          option(value='CZ') Czech Republic
+                                          |                                                                     
+                                          option(value='DK') Denmark
+                                          |                                                                     
+                                          option(value='DJ') Djibouti
+                                          |                                                                     
+                                          option(value='DM') Dominica
+                                          |                                                                     
+                                          option(value='DO') Dominican Republic
+                                          |                                                                     
+                                          option(value='EC') Ecuador
+                                          |                                                                     
+                                          option(value='EG') Egypt
+                                          |                                                                     
+                                          option(value='SV') El Salvador
+                                          |                                                                     
+                                          option(value='GQ') Equatorial Guinea
+                                          |                                                                     
+                                          option(value='ER') Eritrea
+                                          |                                                                     
+                                          option(value='EE') Estonia
+                                          |                                                                     
+                                          option(value='ET') Ethiopia
+                                          |                                                                     
+                                          option(value='FK') Falkland Islands (Malvinas)
+                                          |                                                                     
+                                          option(value='FO') Faroe Islands
+                                          |                                                                     
+                                          option(value='FJ') Fiji
+                                          |                                                                     
+                                          option(value='FI') Finland
+                                          |                                                                     
+                                          option(value='FR') France
+                                          |                                                                     
+                                          option(value='GF') French Guiana
+                                          |                                                                     
+                                          option(value='PF') French Polynesia
+                                          |                                                                     
+                                          option(value='TF') French Southern Territories
+                                          |                                                                     
+                                          option(value='GA') Gabon
+                                          |                                                                     
+                                          option(value='GM') Gambia
+                                          |                                                                     
+                                          option(value='GE') Georgia
+                                          |                                                                     
+                                          option(value='DE') Germany
+                                          |                                                                     
+                                          option(value='GH') Ghana
+                                          |                                                                     
+                                          option(value='GI') Gibraltar
+                                          |                                                                     
+                                          option(value='GR') Greece
+                                          |                                                                     
+                                          option(value='GL') Greenland
+                                          |                                                                     
+                                          option(value='GD') Grenada
+                                          |                                                                     
+                                          option(value='GP') Guadeloupe
+                                          |                                                                     
+                                          option(value='GU') Guam
+                                          |                                                                     
+                                          option(value='GT') Guatemala
+                                          |                                                                     
+                                          option(value='GN') Guinea
+                                          |                                                                     
+                                          option(value='GW') Guinea-Bissau
+                                          |                                                                     
+                                          option(value='GY') Guyana
+                                          |                                                                     
+                                          option(value='HT') Haiti
+                                          |                                                                     
+                                          option(value='HM') Heard and Mc Donald Islands
+                                          |                                                                     
+                                          option(value='VA') Holy See (Vatican City State)
+                                          |                                                                     
+                                          option(value='HN') Honduras
+                                          |                                                                     
+                                          option(value='HK') Hong Kong
+                                          |                                                                     
+                                          option(value='HU') Hungary
+                                          |                                                                     
+                                          option(value='IS') Iceland
+                                          |                                                                     
+                                          option(value='IN') India
+                                          |                                                                     
+                                          option(value='ID') Indonesia
+                                          |                                                                     
+                                          option(value='IR') Iran (Islamic Republic of)
+                                          |                                                                     
+                                          option(value='IQ') Iraq
+                                          |                                                                     
+                                          option(value='IE') Ireland
+                                          |                                                                     
+                                          option(value='IL') Israel
+                                          |                                                                     
+                                          option(value='IT') Italy
+                                          |                                                                     
+                                          option(value='JM') Jamaica
+                                          |                                                                     
+                                          option(value='JP') Japan
+                                          |                                                                     
+                                          option(value='JO') Jordan
+                                          |                                                                     
+                                          option(value='KZ') Kazakhstan
+                                          |                                                                     
+                                          option(value='KE') Kenya
+                                          |                                                                     
+                                          option(value='KI') Kiribati
+                                          |                                                                     
+                                          option(value='KP') Korea, Democratic People&apos;s Republic of
+                                          |                                                                     
+                                          option(value='KR') Korea, Republic of
+                                          |                                                                     
+                                          option(value='KW') Kuwait
+                                          |                                                                     
+                                          option(value='KG') Kyrgyzstan
+                                          |                                                                     
+                                          option(value='LA') Lao People&apos;s Democratic Republic
+                                          |                                                                     
+                                          option(value='LV') Latvia
+                                          |                                                                     
+                                          option(value='LB') Lebanon
+                                          |                                                                     
+                                          option(value='LS') Lesotho
+                                          |                                                                     
+                                          option(value='LR') Liberia
+                                          |                                                                     
+                                          option(value='LY') Libyan Arab Jamahiriya
+                                          |                                                                     
+                                          option(value='LI') Liechtenstein
+                                          |                                                                     
+                                          option(value='LT') Lithuania
+                                          |                                                                     
+                                          option(value='LU') Luxembourg
+                                          |                                                                     
+                                          option(value='MO') Macau
+                                          |                                                                     
+                                          option(value='MK') Macedonia, The Former Yugoslav Republic of
+                                          |                                                                     
+                                          option(value='MG') Madagascar
+                                          |                                                                     
+                                          option(value='MW') Malawi
+                                          |                                                                     
+                                          option(value='MY') Malaysia
+                                          |                                                                     
+                                          option(value='MV') Maldives
+                                          |                                                                     
+                                          option(value='ML') Mali
+                                          |                                                                     
+                                          option(value='MT') Malta
+                                          |                                                                     
+                                          option(value='MH') Marshall Islands
+                                          |                                                                     
+                                          option(value='MQ') Martinique
+                                          |                                                                     
+                                          option(value='MR') Mauritania
+                                          |                                                                     
+                                          option(value='MU') Mauritius
+                                          |                                                                     
+                                          option(value='YT') Mayotte
+                                          |                                                                     
+                                          option(value='MX') Mexico
+                                          |                                                                     
+                                          option(value='FM') Micronesia, Federated States of
+                                          |                                                                     
+                                          option(value='MD') Moldova, Republic of
+                                          |                                                                     
+                                          option(value='MC') Monaco
+                                          |                                                                     
+                                          option(value='MN') Mongolia
+                                          |                                                                     
+                                          option(value='MS') Montserrat
+                                          |                                                                     
+                                          option(value='MA') Morocco
+                                          |                                                                     
+                                          option(value='MZ') Mozambique
+                                          |                                                                     
+                                          option(value='MM') Myanmar
+                                          |                                                                     
+                                          option(value='NA') Namibia
+                                          |                                                                     
+                                          option(value='NR') Nauru
+                                          |                                                                     
+                                          option(value='NP') Nepal
+                                          |                                                                     
+                                          option(value='NL') Netherlands
+                                          |                                                                     
+                                          option(value='AN') Netherlands Antilles
+                                          |                                                                     
+                                          option(value='NC') New Caledonia
+                                          |                                                                     
+                                          option(value='NZ') New Zealand
+                                          |                                                                     
+                                          option(value='NI') Nicaragua
+                                          |                                                                     
+                                          option(value='NE') Niger
+                                          |                                                                     
+                                          option(value='NG') Nigeria
+                                          |                                                                     
+                                          option(value='NU') Niue
+                                          |                                                                     
+                                          option(value='NF') Norfolk Island
+                                          |                                                                     
+                                          option(value='MP') Northern Mariana Islands
+                                          |                                                                     
+                                          option(value='NO') Norway
+                                          |                                                                     
+                                          option(value='OM') Oman
+                                          |                                                                     
+                                          option(value='PK') Pakistan
+                                          |                                                                     
+                                          option(value='PW') Palau
+                                          |                                                                     
+                                          option(value='PA') Panama
+                                          |                                                                     
+                                          option(value='PG') Papua New Guinea
+                                          |                                                                     
+                                          option(value='PY') Paraguay
+                                          |                                                                     
+                                          option(value='PE') Peru
+                                          |                                                                     
+                                          option(value='PH') Philippines
+                                          |                                                                     
+                                          option(value='PN') Pitcairn
+                                          |                                                                     
+                                          option(value='PL') Poland
+                                          |                                                                     
+                                          option(value='PT') Portugal
+                                          |                                                                     
+                                          option(value='PR') Puerto Rico
+                                          |                                                                     
+                                          option(value='QA') Qatar
+                                          |                                                                     
+                                          option(value='RE') Reunion
+                                          |                                                                     
+                                          option(value='RO') Romania
+                                          |                                                                     
+                                          option(value='RU') Russian Federation
+                                          |                                                                     
+                                          option(value='RW') Rwanda
+                                          |                                                                     
+                                          option(value='KN') Saint Kitts and Nevis
+                                          |                                                                     
+                                          option(value='LC') Saint LUCIA
+                                          |                                                                     
+                                          option(value='VC') Saint Vincent and the Grenadines
+                                          |                                                                     
+                                          option(value='WS') Samoa
+                                          |                                                                     
+                                          option(value='SM') San Marino
+                                          |                                                                     
+                                          option(value='ST') Sao Tome and Principe
+                                          |                                                                     
+                                          option(value='SA') Saudi Arabia
+                                          |                                                                     
+                                          option(value='SN') Senegal
+                                          |                                                                     
+                                          option(value='SC') Seychelles
+                                          |                                                                     
+                                          option(value='SL') Sierra Leone
+                                          |                                                                     
+                                          option(value='SG') Singapore
+                                          |                                                                     
+                                          option(value='SK') Slovakia (Slovak Republic)
+                                          |                                                                     
+                                          option(value='SI') Slovenia
+                                          |                                                                     
+                                          option(value='SB') Solomon Islands
+                                          |                                                                     
+                                          option(value='SO') Somalia
+                                          |                                                                     
+                                          option(value='ZA') South Africa
+                                          |                                                                     
+                                          option(value='GS') South Georgia and the South Sandwich Islands
+                                          |                                                                     
+                                          option(value='ES') Spain
+                                          |                                                                     
+                                          option(value='LK') Sri Lanka
+                                          |                                                                     
+                                          option(value='SH') St. Helena
+                                          |                                                                     
+                                          option(value='PM') St. Pierre and Miquelon
+                                          |                                                                     
+                                          option(value='SD') Sudan
+                                          |                                                                     
+                                          option(value='SR') Suriname
+                                          |                                                                     
+                                          option(value='SJ') Svalbard and Jan Mayen Islands
+                                          |                                                                     
+                                          option(value='SZ') Swaziland
+                                          |                                                                     
+                                          option(value='SE') Sweden
+                                          |                                                                     
+                                          option(value='CH') Switzerland
+                                          |                                                                     
+                                          option(value='SY') Syrian Arab Republic
+                                          |                                                                     
+                                          option(value='TW') Taiwan, Province of China
+                                          |                                                                     
+                                          option(value='TJ') Tajikistan
+                                          |                                                                     
+                                          option(value='TZ') Tanzania, United Republic of
+                                          |                                                                     
+                                          option(value='TH') Thailand
+                                          |                                                                     
+                                          option(value='TG') Togo
+                                          |                                                                     
+                                          option(value='TK') Tokelau
+                                          |                                                                     
+                                          option(value='TO') Tonga
+                                          |                                                                     
+                                          option(value='TT') Trinidad and Tobago
+                                          |                                                                     
+                                          option(value='TN') Tunisia
+                                          |                                                                     
+                                          option(value='TR') Turkey
+                                          |                                                                     
+                                          option(value='TM') Turkmenistan
+                                          |                                                                     
+                                          option(value='TC') Turks and Caicos Islands
+                                          |                                                                     
+                                          option(value='TV') Tuvalu
+                                          |                                                                     
+                                          option(value='UG') Uganda
+                                          |                                                                     
+                                          option(value='UA') Ukraine
+                                          |                                                                     
+                                          option(value='AE') United Arab Emirates
+                                          |                                                                     
+                                          option(value='GB') United Kingdom
+                                          |                                                                     
+                                          option(value='US') United States
+                                          |                                                                     
+                                          option(value='UM') United States Minor Outlying Islands
+                                          |                                                                     
+                                          option(value='UY') Uruguay
+                                          |                                                                     
+                                          option(value='UZ') Uzbekistan
+                                          |                                                                     
+                                          option(value='VU') Vanuatu
+                                          |                                                                     
+                                          option(value='VE') Venezuela
+                                          |                                                                     
+                                          option(value='VN') Viet Nam
+                                          |                                                                     
+                                          option(value='VG') Virgin Islands (British)
+                                          |                                                                     
+                                          option(value='VI') Virgin Islands (U.S.)
+                                          |                                                                     
+                                          option(value='WF') Wallis and Futuna Islands
+                                          |                                                                     
+                                          option(value='EH') Western Sahara
+                                          |                                                                     
+                                          option(value='YE') Yemen
+                                          |                                                                     
+                                          option(value='ZM') Zambia
+                                          |                                                                     
+                                          option(value='ZW') Zimbabwe
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3 Remarks
+                                      |                                                             
+                                      .col-md-4
+                                        textarea.form-control(rows='3', name='remarks')
+                                  |                                                     
+                                  #tab3.tab-pane
+                                    h3.block Provide your billing and credit card details
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3
+                                        | Card Holder Name
+                                        span.required  * 
+                                      |                                                             
+                                      .col-md-4
+                                        input.form-control(type='text', name='card_name')
+                                        |                                                                 
+                                        span.help-block  
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3
+                                        | Card Number
+                                        span.required  * 
+                                      |                                                             
+                                      .col-md-4
+                                        input.form-control(type='text', name='card_number')
+                                        |                                                                 
+                                        span.help-block  
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3
+                                        | CVC
+                                        span.required  * 
+                                      |                                                             
+                                      .col-md-4
+                                        input.form-control(type='text', placeholder='', name='card_cvc')
+                                        |                                                                 
+                                        span.help-block  
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3
+                                        | Expiration(MM/YYYY)
+                                        span.required  * 
+                                      |                                                             
+                                      .col-md-4
+                                        input.form-control(type='text', placeholder='MM/YYYY', maxlength='7', name='card_expiry_date')
+                                        |                                                                 
+                                        span.help-block  e.g 11/2020 
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3
+                                        | Payment Options
+                                        span.required  * 
+                                      |                                                             
+                                      .col-md-4
+                                        .checkbox-list
+                                          label
+                                            input(type='checkbox', name='payment[]', value='1', data-title='Auto-Pay with this Credit Card.')
+                                            |  Auto-Pay with this Credit Card
+                                          |                                                                     
+                                          label
+                                            input(type='checkbox', name='payment[]', value='2', data-title='Email me monthly billing.')
+                                            |  Email me monthly billing
+                                        |                                                                 
+                                        #form_payment_error  
+                                  |                                                     
+                                  #tab4.tab-pane
+                                    h3.block Confirm your account
+                                    |                                                         
+                                    h4.form-section Account
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3 Username:
+                                      |                                                             
+                                      .col-md-4
+                                        p.form-control-static(data-display='username')  
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3 Email:
+                                      |                                                             
+                                      .col-md-4
+                                        p.form-control-static(data-display='email')  
+                                    |                                                         
+                                    h4.form-section Profile
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3 Fullname:
+                                      |                                                             
+                                      .col-md-4
+                                        p.form-control-static(data-display='fullname')  
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3 Gender:
+                                      |                                                             
+                                      .col-md-4
+                                        p.form-control-static(data-display='gender')  
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3 Phone:
+                                      |                                                             
+                                      .col-md-4
+                                        p.form-control-static(data-display='phone')  
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3 Address:
+                                      |                                                             
+                                      .col-md-4
+                                        p.form-control-static(data-display='address')  
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3 City/Town:
+                                      |                                                             
+                                      .col-md-4
+                                        p.form-control-static(data-display='city')  
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3 Country:
+                                      |                                                             
+                                      .col-md-4
+                                        p.form-control-static(data-display='country')  
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3 Remarks:
+                                      |                                                             
+                                      .col-md-4
+                                        p.form-control-static(data-display='remarks')  
+                                    |                                                         
+                                    h4.form-section Billing
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3 Card Holder Name:
+                                      |                                                             
+                                      .col-md-4
+                                        p.form-control-static(data-display='card_name')  
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3 Card Number:
+                                      |                                                             
+                                      .col-md-4
+                                        p.form-control-static(data-display='card_number')  
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3 CVC:
+                                      |                                                             
+                                      .col-md-4
+                                        p.form-control-static(data-display='card_cvc')  
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3 Expiration:
+                                      |                                                             
+                                      .col-md-4
+                                        p.form-control-static(data-display='card_expiry_date')  
+                                    |                                                         
+                                    .form-group
+                                      label.control-label.col-md-3 Payment Options:
+                                      |                                                             
+                                      .col-md-4
+                                        p.form-control-static(data-display='payment[]')  
+                              |                                             
+                              .form-actions
+                                .row
+                                  .col-md-offset-3.col-md-9
+                                    a.btn.default.button-previous(href='javascript:;')
+                                      i.fa.fa-angle-left
+                                      |  Back
+                                    |                                                         
+                                    a.btn.btn-outline.green.button-next(href='javascript:;')
+                                      | Continue
+                                      i.fa.fa-angle-right
+                                    |                                                         
+                                    a.btn.green.button-submit(href='javascript:;')
+                                      | Submit
+                                      i.fa.fa-check
+                                              
+                    
+        .page-footer
+              .page-footer-inner
+                | 2016 &copy; Dashboard by Ziviso.            
+              .scroll-to-top
+                i.icon-arrow-up
+                
+        script(src='../assets/global/plugins/respond.min.js')
+        script(src='../assets/global/plugins/excanvas.min.js')
+        script(src='../assets/global/plugins/jquery.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/bootstrap/js/bootstrap.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/js.cookie.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/jquery.blockui.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/uniform/jquery.uniform.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js', type='text/javascript')
+        // END CORE PLUGINS
+        // BEGIN PAGE LEVEL PLUGINS
+        script(src='../assets/global/plugins/moment.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/morris/morris.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/morris/raphael-min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/counterup/jquery.waypoints.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/counterup/jquery.counterup.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/amcharts/amcharts/amcharts.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/amcharts/amcharts/serial.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/amcharts/amcharts/pie.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/amcharts/amcharts/radar.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/amcharts/amcharts/themes/light.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/amcharts/amcharts/themes/patterns.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/amcharts/amcharts/themes/chalk.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/amcharts/ammap/ammap.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/amcharts/ammap/maps/js/worldLow.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/amcharts/amstockcharts/amstock.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/fullcalendar/fullcalendar.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/flot/jquery.flot.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/flot/jquery.flot.resize.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/flot/jquery.flot.categories.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/jquery.sparkline.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js', type='text/javascript')
+        // END PAGE LEVEL PLUGINS
+        // BEGIN THEME GLOBAL SCRIPTS
+        script(src='../assets/global/scripts/app.min.js', type='text/javascript')
+        // END THEME GLOBAL SCRIPTS
+        // BEGIN PAGE LEVEL SCRIPTS
+        script(src='../assets/pages/scripts/dashboard.min.js', type='text/javascript')
+        script(src='../assets/pages/scripts/ui-modals.min.js', type='text/javascript')
+        script(src='../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js', type='text/javascript')
+        script(src='../assets/pages/scripts/components-bootstrap-tagsinput.min.js', type='text/javascript')
+        script(src='../assets/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js', type='text/javascript')
+        script(src='../assets/global/plugins/typeahead/handlebars.min.js', type='text/javascript')     
+        script(src='../assets/global/plugins/typeahead/typeahead.bundle.min.js', type='text/javascript')
+        script(src='../assets/global/plugins/select2/js/select2.full.min.js', type='text/javascript')
+        script(src='../assets/global/plugins/jquery-validation/js/jquery.validate.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/jquery-validation/js/additional-methods.min.js', type='text/javascript')
+        |         
+        script(src='../assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js', type='text/javascript')
+        |         
+        script(src='../assets/pages/scripts/form-wizard.min.js', type='text/javascript')
+        script(src='../assets/layouts/layout2/scripts/layout.min.js', type='text/javascript')
+        |         
+        script(src='../assets/layouts/layout2/scripts/demo.min.js', type='text/javascript')
+        |         
+        script(src='../assets/layouts/global/scripts/quick-sidebar.min.js', type='text/javascript')
+        // END THEME LAYOUT SCRIPTS

@@ -65,9 +65,9 @@ html
             .page-top
               // BEGIN HEADER SEARCH BOX
               // DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box
-              form.search-form.search-form-expanded(action='page_general_search_3.html', method='GET')
+              form.search-form.search-form-expanded(action='members.html', method='GET')
                 .input-group
-                  input.form-control(type='text', placeholder='Search...', name='query')
+                  input.form-control(type='text', placeholder='Search Members...', name='query')
                   |                             
                   span.input-group-btn
                     a.btn.submit(href='javascript:;')
@@ -110,6 +110,7 @@ html
                         a(href='log-in.html')
                           i.icon-key
                           |  Log Out
+                      
         .clearfix
         .page-container
             .page-sidebar-wrapper
@@ -131,6 +132,11 @@ html
                             a.nav-link.nav-toggle(href='calender.html')
                                 i.icon-layers
                                 span.title Calender
+                        li.nav-item.start
+                            a.nav-link.nav-toggle(href='#')
+                                i.icon-wrench
+                                span.title Account Settings
+                        
                                 
             .page-content-wrapper
                 .page-content
@@ -576,7 +582,7 @@ html
                                     .form-group
                                       .fileinput.fileinput-new(data-provides='fileinput')
                                         .fileinput-new.thumbnail(style='width: 200px; height: 150px;')
-                                          img(src='http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image', alt='')
+                                          img(src='../assets/layouts/layout2/img/avatar3.jpg', alt='')
                                         |                                                                 
                                         .fileinput-preview.fileinput-exists.thumbnail(style='max-width: 200px; max-height: 150px;')  
                                         |                                                                 

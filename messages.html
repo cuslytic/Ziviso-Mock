@@ -25,6 +25,18 @@
     <link href="../assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css">
     <link href="../assets/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css">
+    <link href="../assets/apps/css/inbox.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet" type="text/css">
+    <link href="../assets/global/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css">
+    <link href="../assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css">        
+    <link href="../assets/global/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css" rel="stylesheet" type="text/css">        
+    <link href="../assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet" type="text/css">        
+    <link href="../assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" type="text/css">
+    <link href="../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css">        
+    <link href="../assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css">        
+    <link href="../assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">        
+    <link href="../assets/global/plugins/clockface/css/clockface.css" rel="stylesheet" type="text/css">
     <!-- END PAGE LEVEL PLUGINS-->
     <!-- BEGIN THEME GLOBAL STYLES-->
     <link id="style_components" href="../assets/global/css/components.min.css" rel="stylesheet" type="text/css">
@@ -58,9 +70,9 @@
         <div class="page-top">
           <!-- BEGIN HEADER SEARCH BOX-->
           <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box-->
-          <form action="page_general_search_3.html" method="GET" class="search-form search-form-expanded">
+          <form action="members.html" method="GET" class="search-form search-form-expanded">
             <div class="input-group">
-              <input type="text" placeholder="Search..." name="query" class="form-control">                            <span class="input-group-btn"><a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a></span>
+              <input type="text" placeholder="Search Members..." name="query" class="form-control">                            <span class="input-group-btn"><a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a></span>
             </div>
           </form>
           <div class="ul nav nav-bar-nav pull-right">
@@ -88,13 +100,166 @@
             <li class="nav-item start active open"><a href="messages.html" class="nav-link nav-toggle"><i class="icon-folder"></i><span class="title">Messages</span></a></li>
             <li class="nav-item start"><a href="members.html" class="nav-link nav-toggle"><i class="icon-user"></i><span class="title">Members</span></a></li>
             <li class="nav-item start"><a href="calender.html" class="nav-link nav-toggle"><i class="icon-layers"></i><span class="title">Calender</span></a></li>
+            <li class="nav-item start"><a href="account.html" class="nav-link nav-toggle"><i class="icon-wrench"></i><span class="title">Account Settings</span></a></li>
           </ul>
         </div>
       </div>
       <div class="page-content-wrapper">
         <div class="page-content">
-          <h3 class="page-title">Message Box</h3>
-          <div class="row"></div>
+          <div class="row">
+            <div class="inbox">
+              <div class="col-md-2">
+                <div class="inbox-sidebar"><a href="javascript:;" data-title="Compose" class="btn red compose-btn btn-block"><i class="fa fa-edit"></i> Compose</a>                                    
+                  <ul class="inbox-nav">
+                    <li class="active"><a href="javascript:;" data-type="inbox" data-title="Inbox">Sent<span class="badge badge-success">3</span></a></li>                                        
+                    <li><a href="javascript:;" data-type="important" data-title="Inbox"> Scheduled </a></li>
+                    <li><a href="javascript:;" data-type="draft" data-title="Draft">Drafts<span class="badge badge-danger">8</span></a></li>                                        
+                    <li class="divider"></li>                                        
+                    <li><a href="javascript:;" data-title="Trash" class="sbold uppercase">Trash<span class="badge badge-info">23</span></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-10">
+                <div class="inbox-body">
+                  <div class="inbox-header">
+                    <h1 class="pull-left">Message Box</h1>                                        
+                    <form action="index.html" class="form-inline pull-right">
+                      <div class="input-group input-medium">
+                        <input type="text" placeholder="Password" class="form-control">                                                <span class="input-group-btn">
+                          <button type="submit" class="btn green"><i class="fa fa-search"></i></button></span>
+                      </div>
+                    </form>
+                  </div>                                    
+                  <div class="inbox-content"> 
+                    <form id="fileupload" action="#" method="POST" enctype="multipart/form-data" class="inbox-compose form-horizontal">
+                      <div class="inbox-compose-btn">
+                        <button class="btn green"><i class="fa fa-check"></i>Send</button><a data-toggle="modal" href="#send-later" class="btn green"><i class="fa fa-calendar"></i>Send Later</a>
+                        <button class="btn default inbox-discard-btn">Discard</button>        
+                        <button class="btn default">Draft</button>
+                        <div id="send-later" tabindex="-1" role="basic" aria-hidden="true" class="modal fade draggable-modal">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" data-dismiss="modal" aria-hidden="true" class="close"></button>                                                    
+                                <h4 class="modal-title">Schedule Message   </h4>
+                              </div>                                                
+                              <div class="modal-body"> 
+                                <div class="form-group">
+                                  <label class="control-label col-md-3">Meridian Format</label>                                                
+                                  <div class="col-md-4">
+                                    <div data-date="2012-12-21T15:25:00Z" class="input-group date form_meridian_datetime">
+                                      <input type="text" size="16" class="form-control">                                                        <span class="input-group-btn">
+                                        <button type="button" class="btn default date-reset"><i class="fa fa-times"></i></button>                                                            
+                                        <button type="button" class="btn default date-set"><i class="fa fa-calendar"></i></button></span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" data-dismiss="modal" class="btn dark btn-outline">Cancel  </button>                                                    
+                                <button type="button" class="btn green">Send </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>    
+                      <div class="inbox-form-group mail-to">
+                        <label class="control-label">To:</label>        
+                        <div class="controls controls-to">
+                          <input type="text" name="to" class="form-control">            <span class="inbox-cc-bcc"><span class="inbox-cc"> Cc </span>                <span class="inbox-bcc"> Bcc </span></span>
+                        </div>
+                      </div>    
+                      <div class="inbox-form-group input-cc display-hide"><a href="javascript:;" class="close"> </a>        
+                        <label class="control-label">Cc:</label>        
+                        <div class="controls controls-cc">
+                          <input type="text" name="cc" class="form-control">
+                        </div>
+                      </div>    
+                      <div class="inbox-form-group input-bcc display-hide"><a href="javascript:;" class="close"> </a>        
+                        <label class="control-label">Bcc:</label>        
+                        <div class="controls controls-bcc">
+                          <input type="text" name="bcc" class="form-control">
+                        </div>
+                      </div>    
+                      <div class="inbox-form-group">
+                        <label class="control-label">Subject:</label>        
+                        <div class="controls">
+                          <input type="text" name="subject" class="form-control">
+                        </div>
+                      </div>    
+                      <div class="inbox-form-group">
+                        <textarea name="message" rows="12" class="inbox-editor inbox-wysihtml5 form-control"></textarea>
+                      </div>    
+                      <div class="inbox-compose-attachment">
+                        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload--><span class="btn green btn-outline fileinput-button"><i class="fa fa-plus"></i>            <span> Add files... </span>            
+                          <input type="file" name="files[]" multiple=""></span>
+                        <!-- The table listing the files available for upload/download-->
+                        <table role="presentation" class="table table-striped margin-top-10">
+                          <tbody class="files"> </tbody>
+                        </table>
+                      </div>    
+                      <script id="template-upload" type="text/x-tmpl">
+                        {% for (var i=0, file; file=o.files[i]; i++) { %}
+                        <tr class="template-upload fade">
+                        <td class="name" width="30%">
+                        <span>{%=file.name%}</span>
+                        </td>
+                        <td class="size" width="40%">
+                        <span>{%=o.formatFileSize(file.size)%}</span>
+                        </td> {% if (file.error) { %}
+                        <td class="error" width="20%" colspan="2">
+                        <span class="label label-danger">Error</span> {%=file.error%}</td> {% } else if (o.files.valid && !i) { %}
+                        <td>
+                        <p class="size">{%=o.formatFileSize(file.size)%}</p>
+                        <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+                        </div>
+                        </td> {% } else { %}
+                        <td colspan="2"></td> {% } %}
+                        <td class="cancel" width="10%" align="right">{% if (!i) { %}
+                        <button class="btn btn-sm red cancel">
+                        <i class="fa fa-ban"></i>
+                        <span>Cancel</span>
+                        </button> {% } %}</td>
+                        </tr> {% } %}
+                      </script>
+                      <!-- The template to display files available for download-->
+                      <script id="template-download" type="text/x-tmpl">
+                        {% for (var i=0, file; file=o.files[i]; i++) { %}
+                        <tr class="template-download fade"> {% if (file.error) { %}
+                        <td class="name" width="30%">
+                        <span>{%=file.name%}</span>
+                        </td>
+                        <td class="size" width="40%">
+                        <span>{%=o.formatFileSize(file.size)%}</span>
+                        </td>
+                        <td class="error" width="30%" colspan="2">
+                        <span class="label label-danger">Error</span> {%=file.error%}</td> {% } else { %}
+                        <td class="name" width="30%">
+                        <a href="{%=file.url%}" title="{%=file.name%}" data-gallery="{%=file.thumbnail_url&&'gallery'%}" download="{%=file.name%}">{%=file.name%}</a>
+                        </td>
+                        <td class="size" width="40%">
+                        <span>{%=o.formatFileSize(file.size)%}</span>
+                        </td>
+                        <td colspan="2"></td> {% } %}
+                        <td class="delete" width="10%" align="right">
+                        <button class="btn default btn-sm" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}" {% if (file.delete_with_credentials) { %} data-xhr-fields='{"withCredentials":true}' {% } %}>
+                        <i class="fa fa-times"></i>
+                        </button>
+                        </td>
+                        </tr> {% } %}
+                        
+                        
+                        
+                        
+                        
+                      </script>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -154,9 +319,26 @@
   <!-- END THEME GLOBAL SCRIPTS-->
   <!-- BEGIN PAGE LEVEL SCRIPTS-->
   <script src="../assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
+  <script src="../assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
   <script src="../assets/pages/scripts/ui-modals.min.js" type="text/javascript"></script>
-  <!-- END PAGE LEVEL SCRIPTS-->
-  <!-- BEGIN THEME LAYOUT SCRIPTS-->
+  <script src="../assets/apps/scripts/inbox.min.js" type="text/javascript"></script>
+  <script src="../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
+  <script src="../assets/global/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <script src="../assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js" type="text/javascript"></script>        
+  <script src="../assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js" type="text/javascript"></script>        
+  <script src="../assets/global/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js" type="text/javascript"></script>        
+  <script src="../assets/global/plugins/jquery-file-upload/js/vendor/tmpl.min.js" type="text/javascript"></script>        
+  <script src="../assets/global/plugins/jquery-file-upload/js/vendor/load-image.min.js" type="text/javascript"></script>        
+  <script src="../assets/global/plugins/jquery-file-upload/js/vendor/canvas-to-blob.min.js" type="text/javascript"></script>        
+  <script src="../assets/global/plugins/jquery-file-upload/blueimp-gallery/jquery.blueimp-gallery.min.js" type="text/javascript"></script>        
+  <script src="../assets/global/plugins/jquery-file-upload/js/jquery.iframe-transport.js" type="text/javascript"></script>        
+  <script src="../assets/global/plugins/jquery-file-upload/js/jquery.fileupload.js" type="text/javascript"></script>        
+  <script src="../assets/global/plugins/jquery-file-upload/js/jquery.fileupload-process.js" type="text/javascript"></script>        
+  <script src="../assets/global/plugins/jquery-file-upload/js/jquery.fileupload-image.js" type="text/javascript"></script>        
+  <script src="../assets/global/plugins/jquery-file-upload/js/jquery.fileupload-audio.js" type="text/javascript"></script>        
+  <script src="../assets/global/plugins/jquery-file-upload/js/jquery.fileupload-video.js" type="text/javascript"></script>        
+  <script src="../assets/global/plugins/jquery-file-upload/js/jquery.fileupload-validate.js" type="text/javascript"></script>        
+  <script src="../assets/global/plugins/jquery-file-upload/js/jquery.fileupload-ui.js" type="text/javascript"></script>
   <script src="../assets/layouts/layout2/scripts/layout.min.js" type="text/javascript"></script>        
   <script src="../assets/layouts/layout2/scripts/demo.min.js" type="text/javascript"></script>        
   <script src="../assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>

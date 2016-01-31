@@ -58,9 +58,9 @@ html
             .page-top
               // BEGIN HEADER SEARCH BOX
               // DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box
-              form.search-form.search-form-expanded(action='page_general_search_3.html', method='GET')
+              form.search-form.search-form-expanded(action='members.html', method='GET')
                 .input-group
-                  input.form-control(type='text', placeholder='Search...', name='query')
+                  input.form-control(type='text', placeholder='Search Members...', name='query')
                   |                             
                   span.input-group-btn
                     a.btn.submit(href='javascript:;')
@@ -124,6 +124,10 @@ html
                             a.nav-link.nav-toggle(href='calender.html')
                                 i.icon-layers
                                 span.title Calender
+                        li.nav-item.start
+                            a.nav-link.nav-toggle(href='account.html')
+                                i.icon-wrench
+                                span.title Account Settings
                                 
             .page-content-wrapper
                 .page-content
@@ -193,8 +197,8 @@ html
                                       .task-checkbox
                                         input.liChild(type='checkbox', value='')
                                       .task-title
-                                        span.task-title-sp  Present 2013 Year IPO Statistics at Board Meeting 
-                                        span.label.label-sm.label-success Company
+                                        span.task-title-sp  Message needs your approval 
+                                        span.label.label-sm.label-success Messages 
                                         span.task-bell
                                           i.fa.fa-bell-o
                                       .task-config
@@ -206,45 +210,21 @@ html
                                             li
                                               a(href='javascript:;')
                                                 i.fa.fa-check
-                                                |  Complete
+                                                |  Approve 
                                             li
                                               a(href='javascript:;')
                                                 i.fa.fa-pencil
-                                                |  Edit
+                                                |  View 
                                             li
                                               a(href='javascript:;')
                                                 i.fa.fa-trash-o
-                                                |  Cancel
+                                                |  Reject 
                                     li
                                       .task-checkbox
                                         input.liChild(type='checkbox', value='')
                                       .task-title
-                                        span.task-title-sp  Hold An Interview for Marketing Manager Position 
-                                        span.label.label-sm.label-danger Marketing
-                                      .task-config
-                                        .task-config-btn.btn-group
-                                          a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
-                                            i.fa.fa-cog
-                                            i.fa.fa-angle-down
-                                          ul.dropdown-menu.pull-right
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-check
-                                                |  Complete
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-pencil
-                                                |  Edit
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-trash-o
-                                                |  Cancel
-                                    li
-                                      .task-checkbox
-                                        input.liChild(type='checkbox', value='')
-                                      .task-title
-                                        span.task-title-sp  AirAsia Intranet System Project Internal Meeting 
-                                        span.label.label-sm.label-success AirAsia
+                                        span.task-title-sp  Incomplete member application   
+                                        span.label.label-sm.label-success Members 
                                         span.task-bell
                                           i.fa.fa-bell-o
                                       .task-config
@@ -256,97 +236,26 @@ html
                                             li
                                               a(href='javascript:;')
                                                 i.fa.fa-check
-                                                |  Complete
+                                                |  Approve 
                                             li
                                               a(href='javascript:;')
                                                 i.fa.fa-pencil
-                                                |  Edit
+                                                |  View 
                                             li
                                               a(href='javascript:;')
                                                 i.fa.fa-trash-o
-                                                |  Cancel
+                                                |  Reject 
+                                                
                                     li
                                       .task-checkbox
                                         input.liChild(type='checkbox', value='')
                                       .task-title
-                                        span.task-title-sp  Technical Management Meeting 
-                                        span.label.label-sm.label-warning Company
-                                      .task-config
-                                        .task-config-btn.btn-group
-                                          a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
-                                            i.fa.fa-cog
-                                            i.fa.fa-angle-down
-                                          ul.dropdown-menu.pull-right
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-check
-                                                |  Complete
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-pencil
-                                                |  Edit
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-trash-o
-                                                |  Cancel
-                                    li
-                                      .task-checkbox
-                                        input.liChild(type='checkbox', value='')
-                                      .task-title
-                                        span.task-title-sp  Kick-off Company CRM Mobile App Development 
-                                        span.label.label-sm.label-info Internal Products
-                                      .task-config
-                                        .task-config-btn.btn-group
-                                          a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
-                                            i.fa.fa-cog
-                                            i.fa.fa-angle-down
-                                          ul.dropdown-menu.pull-right
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-check
-                                                |  Complete
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-pencil
-                                                |  Edit
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-trash-o
-                                                |  Cancel
-                                    li
-                                      .task-checkbox
-                                        input.liChild(type='checkbox', value='')
-                                      .task-title
-                                        span.task-title-sp  Prepare Commercial Offer For SmartVision Website Rewamp 
-                                        span.label.label-sm.label-danger SmartVision
-                                      .task-config
-                                        .task-config-btn.btn-group
-                                          a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
-                                            i.fa.fa-cog
-                                            i.fa.fa-angle-down
-                                          ul.dropdown-menu.pull-right
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-check
-                                                |  Complete
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-pencil
-                                                |  Edit
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-trash-o
-                                                |  Cancel
-                                    li
-                                      .task-checkbox
-                                        input.liChild(type='checkbox', value='')
-                                      .task-title
-                                        span.task-title-sp  Sign-Off The Comercial Agreement With AutoSmart 
-                                        span.label.label-sm.label-default AutoSmart
+                                        span.task-title-sp  Send sports day reminder to group 2   
+                                        span.label.label-sm.label-success Members 
                                         span.task-bell
                                           i.fa.fa-bell-o
                                       .task-config
-                                        .task-config-btn.btn-group.dropup
+                                        .task-config-btn.btn-group
                                           a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
                                             i.fa.fa-cog
                                             i.fa.fa-angle-down
@@ -354,65 +263,15 @@ html
                                             li
                                               a(href='javascript:;')
                                                 i.fa.fa-check
-                                                |  Complete
+                                                |  Approve 
                                             li
                                               a(href='javascript:;')
                                                 i.fa.fa-pencil
-                                                |  Edit
+                                                |  View 
                                             li
                                               a(href='javascript:;')
                                                 i.fa.fa-trash-o
-                                                |  Cancel
-                                    li
-                                      .task-checkbox
-                                        input.liChild(type='checkbox', value='')
-                                      .task-title
-                                        span.task-title-sp  Company Staff Meeting 
-                                        span.label.label-sm.label-success Cruise
-                                        span.task-bell
-                                          i.fa.fa-bell-o
-                                      .task-config
-                                        .task-config-btn.btn-group.dropup
-                                          a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
-                                            i.fa.fa-cog
-                                            i.fa.fa-angle-down
-                                          ul.dropdown-menu.pull-right
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-check
-                                                |  Complete
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-pencil
-                                                |  Edit
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-trash-o
-                                                |  Cancel
-                                    li.last-line
-                                      .task-checkbox
-                                        input.liChild(type='checkbox', value='')
-                                      .task-title
-                                        span.task-title-sp  KeenThemes Investment Discussion 
-                                        span.label.label-sm.label-warning KeenThemes 
-                                      .task-config
-                                        .task-config-btn.btn-group.dropup
-                                          a.btn.btn-sm.default(href='javascript:;', data-toggle='dropdown', data-hover='dropdown', data-close-others='true')
-                                            i.fa.fa-cog
-                                            i.fa.fa-angle-down
-                                          ul.dropdown-menu.pull-right
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-check
-                                                |  Complete
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-pencil
-                                                |  Edit
-                                            li
-                                              a(href='javascript:;')
-                                                i.fa.fa-trash-o
-                                                |  Cancel
+                                                |  Reject 
                          .col-md-6.col-sm-6
                             .portlet.light
                                 .portlet-title.tabbable-line
@@ -421,9 +280,7 @@ html
                                         span.caption-subject.font-green-sharp.bold.uppercase Feeds
                                     ul.nav.nav-tabs
                                         li.active
-                                          a.active(href='#tab_1_1', data-toggle='tab')  System 
-                                        li
-                                          a(href='#tab_1_2', data-toggle='tab')  Activities 
+                                          a.active(href='#tab_1_1', data-toggle='tab')  Activities  
                                 .portlet-body
                                     .tab-content
                                         #tab_1_1.tab-pane.active
@@ -434,32 +291,16 @@ html
                                                           .cont
                                                             .cont-col1
                                                               .label.label-sm.label-success
-                                                                i.fa.fa-bell-o
+                                                                i.fa.fa-bullhorn
                                                             .cont-col2
                                                               .desc
-                                                                | You have 4 pending tasks.
+                                                                | Chenjerai sent a message to Group 1
                                                                 span.label.label-sm.label-info
                                                                   | Take action
                                                                   i.fa.fa-share
                                                         .col2
                                                           .date  Just now 
-                                        #tab_1_2.tab-pane
-                                            .scroller(style='height: 339px;', data-always-visible='1', data-rail-visible='0')
-                                                ul.feeds
-                                                      li
-                                                        .col1
-                                                          .cont
-                                                            .cont-col1
-                                                              .label.label-sm.label-success
-                                                                i.fa.fa-bell-o
-                                                            .cont-col2
-                                                              .desc
-                                                                | You have 4 pending tasks.
-                                                                span.label.label-sm.label-info
-                                                                  | Take action
-                                                                  i.fa.fa-share
-                                                        .col2
-                                                          .date  Just now 
+                                        
                     .row  
                         .col-md-6.col-sm-6
                           // BEGIN PORTLET
