@@ -65,7 +65,7 @@ html
             // BEGIN LOGO
             .page-logo
               a(href='index.html')
-                img.logo-default(src='../assets/layouts/layout2/img/logo-default.png', alt='logo')
+                img.logo-default('src=../assets/pages/img/login/logo2.png', alt='logo')
               |                     
               .menu-toggler.sidebar-toggler
                 // DOC: Remove the above "hide" to enable the sidebar toggler button on header
@@ -207,7 +207,8 @@ html
                                   button.btn.default.inbox-discard-btn Discard
                                   |         
                                   button.btn.default Draft
-                                  
+                                  .input-group
+    
                                   #send-later.modal.fade.draggable-modal(tabindex='-1', role='basic', aria-hidden='true')
                                     .modal-dialog
                                       .modal-content
@@ -247,7 +248,7 @@ html
                                       span.inbox-cc  Cc 
                                       |                 
                                       span.inbox-bcc  Bcc 
-                                |     
+                                      
                                 .inbox-form-group.input-cc.display-hide
                                   a.close(href='javascript:;')  
                                   |         
@@ -255,6 +256,16 @@ html
                                   |         
                                   .controls.controls-cc
                                     input.form-control(type='text', name='cc')
+                                |     
+                                .form-group
+                                  .icheck-inline
+                                    label
+                                      input.icheck(type='checkbox')
+                                      |  SMS
+                                    |                                                                             
+                                    label
+                                      input.icheck(type='checkbox', checked='')
+                                      |  EMAIL
                                 |     
                                 .inbox-form-group.input-bcc.display-hide
                                   a.close(href='javascript:;')  
