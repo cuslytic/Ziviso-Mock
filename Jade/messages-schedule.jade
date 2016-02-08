@@ -157,7 +157,7 @@ html
                       .inbox
                         .col-md-2
                           .inbox-sidebar
-                            a.btn.red.compose-btn.btn-block(href='javascript:;', data-title='Compose')
+                            a.btn.red.compose-btn.btn-block(href='messages.html')
                               i.fa.fa-edit
                               |  Compose
                             |                                     
@@ -167,11 +167,11 @@ html
                                   | Sent
                                   span.badge.badge-success 3
                               |                                         
-                              li
-                                a(href='javascript:;', data-type='important', data-title='Inbox')  Scheduled 
+                              li.active
+                                a(href='messages-schedule.html')  Scheduled 
                                                                     
                               li
-                                a(href='javascript:;', data-type='draft', data-title='Draft')
+                                a(href='messages-drafts.html')
                                   | Drafts
                                   span.badge.badge-danger 8
                               |                                         
@@ -183,251 +183,69 @@ html
                                   span.badge.badge-info 23
                         .col-md-10
                           .inbox-body
-                            .inbox-header
-                              h1.pull-left Message Box
-                              |                                         
-                              form.form-inline.pull-right(action='index.html')
-                                .input-group.input-medium
-                                  input.form-control(type='text', placeholder='Password')
-                                  |                                                 
-                                  span.input-group-btn
-                                    button.btn.green(type='submit')
-                                      i.fa.fa-search
-                            |                                     
-                            .inbox-content 
-                              form#fileupload.inbox-compose.form-horizontal(action='#', method='POST', enctype='multipart/form-data')
-                                .inbox-compose-btn
-                                  button.btn.green
-                                    i.fa.fa-check
-                                    | Send
-                                    
-                                  a.btn.green(data-toggle="modal", href="#send-later")
-                                    i.fa.fa-calendar
-                                    | Send Later
-                                    
-                                  button.btn.default.inbox-discard-btn Discard
-                                  |         
-                                  button.btn.default Draft
+                            table.table.table-striped.table-advance.table-hover
+                              thead
+                                tr
+                                  th(colspan='3')
+                                    input.mail-checkbox.mail-group-checkbox(type='checkbox')
+                                    |                 
+                                    .btn-group.input-actions
+                                      a.btn.btn-sm.blue.btn-outline.dropdown-toggle.sbold(href='javascript:;', data-toggle='dropdown')
+                                        | Actions
+                                        i.fa.fa-angle-down
+                                      |                     
+                                      ul.dropdown-menu
+                                        li
+                                          a(href='javascript:;')
+                                            i.fa.fa-pencil
+                                            |  Resend 
+                                        li
+                                          a(href='javascript:;')
+                                            i.fa.fa-trash-o
+                                            |  Delete
+                                  |             
+                                  th.pagination-control(colspan='3')
+                                    span.pagination-info  1-30 of 789 
+                                    |                 
+                                    a.btn.btn-sm.blue.btn-outline
+                                      i.fa.fa-angle-left
+                                    |                 
+                                    a.btn.btn-sm.blue.btn-outline
+                                      i.fa.fa-angle-right
+                              |     
+                              tbody
+                                tr.unread(data-messageid='1')
+                                  td.inbox-small-cells
+                                    input.mail-checkbox(type='checkbox')
+                                  |             
+                                  td.inbox-small-cells
+                                    i.fa.fa-star
+                                  |             
+                                  td.view-message.hidden-xs  Massaging Club
+                                  |             
+                                  td.view-message  New Weekly Program 
+                                  |             
+                                  td.view-message.inbox-small-cells
+                                    i.fa.fa-paperclip
+                                  |             
+                                  td.view-message.text-right  26/05/2016
+                                |         
+                                tr.unread(data-messageid='2')
+                                  td.inbox-small-cells
+                                    input.mail-checkbox(type='checkbox')
+                                  |             
+                                  td.inbox-small-cells
+                                    i.fa.fa-star
+                                  |             
+                                  td.view-message.hidden-xs  Universal 
+                                  |             
+                                  td.view-message  Gym Open Day 
+                                  |             
+                                  td.view-message.inbox-small-cells  
+                                  |             
+                                  td.view-message.text-right  30/02/2016
                                   
-                                .inbox-compose-btn
-                                  .input-group
-                                   .form-group.stack
-                                      label Send Via:
-                                      |                                                                     
-                                      .input-group
-                                        .icheck-inline
-                                          label
-                                            input.icheck(type='checkbox')
-                                            |  Email
-                                          |                                                                             
-                                          label
-                                            input.icheck(type='checkbox', checked='')
-                                            |  SMS
-    
-                                  #send-later.modal.fade.draggable-modal(tabindex='-1', role='basic', aria-hidden='true')
-                                    .modal-dialog
-                                      .modal-content
-                                        .modal-header
-                                          button.close(type='button', data-dismiss='modal', aria-hidden='true')
-                                          |                                                     
-                                          h4.modal-title Schedule Message   
-                                        |                                                 
-                                        .modal-body 
-                                          .form-group
-                                            label.control-label.col-md-3 Meridian Format
-                                            |                                                 
-                                            .col-md-4
-                                              .input-group.date.form_meridian_datetime(data-date='2012-12-21T15:25:00Z')
-                                                input.form-control(type='text', size='16')
-                                                |                                                         
-                                                span.input-group-btn
-                                                  button.btn.default.date-reset(type='button')
-                                                    i.fa.fa-times
-                                                  |                                                             
-                                                  button.btn.default.date-set(type='button')
-                                                    i.fa.fa-calendar
-    
-                                        .modal-footer
-                                          button.btn.dark.btn-outline(type='button', data-dismiss='modal') Cancel  
-                                          |                                                     
-                                          button.btn.green(type='button') Send 
-                                  
-                                |     
-                                .inbox-form-group.mail-to
-                                  label.control-label To:
-                                  |         
-                                  .controls.controls-to
-                                    input.form-control(type='text', name='to')
-                                    |             
-                                .inbox-form-group.input-cc.display-hide
-                                  a.close(href='javascript:;')  
-                                  |         
-                                  label.control-label Cc:
-                                  |         
-                                  .controls.controls-cc
-                                    input.form-control(type='text', name='cc')
-                                |     
-                                .inbox-form-group.input-bcc.display-hide
-                                  a.close(href='javascript:;')  
-                                  |         
-                                  label.control-label Bcc:
-                                  |         
-                                  .controls.controls-bcc
-                                    input.form-control(type='text', name='bcc')
-                                |     
-                                .inbox-form-group
-                                  label.control-label Subject:
-                                  |         
-                                  .controls
-                                    input.form-control(type='text', name='subject')
-                                |     
-                                .inbox-form-group
-                                  textarea.inbox-editor.inbox-wysihtml5.form-control(name='message', rows='12')
-                                |     
-                                .inbox-compose-attachment
-                                  // The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload
-                                  span.btn.green.btn-outline.fileinput-button
-                                    i.fa.fa-plus
-                                    |             
-                                    span  Add files... 
-                                    |             
-                                    input(type='file', name='files[]', multiple='')
-                                  // The table listing the files available for upload/download
-                                  table.table.table-striped.margin-top-10(role='presentation')
-                                    tbody.files  
-                                |     
-                                script#template-upload(type='text/x-tmpl').
-                                  {% for (var i=0, file; file=o.files[i]; i++) { %}
-                                  <tr class="template-upload fade">
-                                  <td class="name" width="30%">
-                                  <span>{%=file.name%}</span>
-                                  </td>
-                                  <td class="size" width="40%">
-                                  <span>{%=o.formatFileSize(file.size)%}</span>
-                                  </td> {% if (file.error) { %}
-                                  <td class="error" width="20%" colspan="2">
-                                  <span class="label label-danger">Error</span> {%=file.error%}</td> {% } else if (o.files.valid && !i) { %}
-                                  <td>
-                                  <p class="size">{%=o.formatFileSize(file.size)%}</p>
-                                  <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                                  <div class="progress-bar progress-bar-success" style="width:0%;"></div>
-                                  </div>
-                                  </td> {% } else { %}
-                                  <td colspan="2"></td> {% } %}
-                                  <td class="cancel" width="10%" align="right">{% if (!i) { %}
-                                  <button class="btn btn-sm red cancel">
-                                  <i class="fa fa-ban"></i>
-                                  <span>Cancel</span>
-                                  </button> {% } %}</td>
-                                  </tr> {% } %}
-                                // The template to display files available for download
-                                script#template-download(type='text/x-tmpl').
-                                  {% for (var i=0, file; file=o.files[i]; i++) { %}
-                                  <tr class="template-download fade"> {% if (file.error) { %}
-                                  <td class="name" width="30%">
-                                  <span>{%=file.name%}</span>
-                                  </td>
-                                  <td class="size" width="40%">
-                                  <span>{%=o.formatFileSize(file.size)%}</span>
-                                  </td>
-                                  <td class="error" width="30%" colspan="2">
-                                  <span class="label label-danger">Error</span> {%=file.error%}</td> {% } else { %}
-                                  <td class="name" width="30%">
-                                  <a href="{%=file.url%}" title="{%=file.name%}" data-gallery="{%=file.thumbnail_url&&'gallery'%}" download="{%=file.name%}">{%=file.name%}</a>
-                                  </td>
-                                  <td class="size" width="40%">
-                                  <span>{%=o.formatFileSize(file.size)%}</span>
-                                  </td>
-                                  <td colspan="2"></td> {% } %}
-                                  <td class="delete" width="10%" align="right">
-                                  <button class="btn default btn-sm" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}" {% if (file.delete_with_credentials) { %} data-xhr-fields='{"withCredentials":true}' {% } %}>
-                                  <i class="fa fa-times"></i>
-                                  </button>
-                                  </td>
-                                  </tr> {% } %}
                                 
-                            .portlet.light
-                              .portlet-title
-                                .caption
-                                  i.fa.fa-bell-o
-                                  | Approve Messages
-                                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                .tools
-                                  a.collapse(href='javascript:;')
-                                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                  a.config(href='#portlet-config', data-toggle='modal')
-                                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                  a.reload(href='javascript:;')
-                                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                  a.remove(href='javascript:;')
-                              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                              .portlet-body
-                                .table-scrollable
-                                  table.table.table-striped.table-bordered.table-advance.table-hover
-                                    thead
-                                      tr
-                                        th
-                                          i.fa.fa-user
-                                          |  User
-                                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                        th.hidden-xs
-                                          i.fa.fa-briefcase
-                                          |  Subject
-                                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                        th
-                                          i.fa.fa-envelope-o
-                                          |  Recipients
-                                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                        th
-                                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                    tbody
-                                      tr
-                                        td.highlight
-                                          .success
-                                          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                          a(href='javascript:;')
-                                            | Munashe Kigi
-                                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                        td.hidden-xs
-                                          | Open Gym Day
-                                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                        td
-                                          | Universal
-                                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                        td
-                                          a.btn.default.btn-xs.purple(href='javascript:;')
-                                            i.fa.fa-edit
-                                            |  Edit
-                                          a.btn.default.btn-xs.red(href='javascript:;')
-                                            i.fa.fa-trash-o
-                                            |  Reject
-                                          a.btn.default.btn-xs.green(href='javascript:;')
-                                            i.fa.fa-check
-                                            |  Approve
-                                      tr
-                                        td.highlight
-                                          .success
-                                          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                          a(href='javascript:;')
-                                            | Jerome Thomas
-                                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                        td.hidden-xs
-                                          | Clothing Line
-                                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                        td
-                                          | All Members
-                                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                        td
-                                          a.btn.default.btn-xs.purple(href='javascript:;')
-                                            i.fa.fa-edit
-                                            |  Edit
-                                          a.btn.default.btn-xs.red(href='javascript:;')
-                                            i.fa.fa-trash-o
-                                            |  Reject
-                                          a.btn.default.btn-xs.green(href='javascript:;')
-                                            i.fa.fa-check
-                                            |  Approve
-                                          
 
 
 

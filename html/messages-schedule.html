@@ -110,9 +110,9 @@
           <div class="row">
             <div class="inbox">
               <div class="col-md-2">
-                <div class="inbox-sidebar"><a href="javascript:;" data-title="Compose" class="btn red compose-btn btn-block"><i class="fa fa-edit"></i> Compose</a>                                    
+                <div class="inbox-sidebar"><a href="messages.html" class="btn red compose-btn btn-block"><i class="fa fa-edit"></i> Compose</a>                                    
                   <ul class="inbox-nav">
-                    <li><a href="messages-view.html">Sent<span class="badge badge-success">3</span></a></li>                                        
+                    <li class="active"><a href="javascript:;" data-type="inbox" data-title="Inbox">Sent<span class="badge badge-success">3</span></a></li>                                        
                     <li><a href="javascript:;" data-type="important" data-title="Inbox"> Scheduled </a></li>
                     <li><a href="javascript:;" data-type="draft" data-title="Draft">Drafts<span class="badge badge-danger">8</span></a></li>                                        
                     <li class="divider"></li>                                        
@@ -122,192 +122,44 @@
               </div>
               <div class="col-md-10">
                 <div class="inbox-body">
-                  <div class="inbox-header">
-                    <h1 class="pull-left">Message Box</h1>                                        
-                    <form action="index.html" class="form-inline pull-right">
-                      <div class="input-group input-medium">
-                        <input type="text" placeholder="Password" class="form-control">                                                <span class="input-group-btn">
-                          <button type="submit" class="btn green"><i class="fa fa-search"></i></button></span>
-                      </div>
-                    </form>
-                  </div>                                    
-                  <div class="inbox-content"> 
-                    <form id="fileupload" action="#" method="POST" enctype="multipart/form-data" class="inbox-compose form-horizontal">
-                      <div class="inbox-compose-btn">
-                        <button class="btn green"><i class="fa fa-check"></i>Send</button><a data-toggle="modal" href="#send-later" class="btn green"><i class="fa fa-calendar"></i>Send Later</a>
-                        <button class="btn default inbox-discard-btn">Discard</button>        
-                        <button class="btn default">Draft</button>
-                      </div>
-                      <div class="inbox-compose-btn">
-                        <div class="input-group">
-                          <div class="form-group stack">
-                            <label>Send Via:</label>                                                                    
-                            <div class="input-group">
-                              <div class="icheck-inline">
-                                <label>
-                                  <input type="checkbox" class="icheck"> Email
-                                </label>                                                                            
-                                <label>
-                                  <input type="checkbox" checked="" class="icheck"> SMS
-                                </label>
-                              </div>
-                            </div>
+                  <table class="table table-striped table-advance table-hover">
+                    <thead>
+                      <tr>
+                        <th colspan="3">
+                          <input type="checkbox" class="mail-checkbox mail-group-checkbox">                
+                          <div class="btn-group input-actions"><a href="javascript:;" data-toggle="dropdown" class="btn btn-sm blue btn-outline dropdown-toggle sbold">Actions<i class="fa fa-angle-down"></i></a>                    
+                            <ul class="dropdown-menu">
+                              <li><a href="javascript:;"><i class="fa fa-pencil"></i> Resend </a></li>
+                              <li><a href="javascript:;"><i class="fa fa-trash-o"></i> Delete</a></li>
+                            </ul>
                           </div>
-                        </div>
-                        <div id="send-later" tabindex="-1" role="basic" aria-hidden="true" class="modal fade draggable-modal">
-                          <div class="modal-dialog">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" data-dismiss="modal" aria-hidden="true" class="close"></button>                                                    
-                                <h4 class="modal-title">Schedule Message   </h4>
-                              </div>                                                
-                              <div class="modal-body"> 
-                                <div class="form-group">
-                                  <label class="control-label col-md-3">Meridian Format</label>                                                
-                                  <div class="col-md-4">
-                                    <div data-date="2012-12-21T15:25:00Z" class="input-group date form_meridian_datetime">
-                                      <input type="text" size="16" class="form-control">                                                        <span class="input-group-btn">
-                                        <button type="button" class="btn default date-reset"><i class="fa fa-times"></i></button>                                                            
-                                        <button type="button" class="btn default date-set"><i class="fa fa-calendar"></i></button></span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" data-dismiss="modal" class="btn dark btn-outline">Cancel  </button>                                                    
-                                <button type="button" class="btn green">Send </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>    
-                      <div class="inbox-form-group mail-to">
-                        <label class="control-label">To:</label>        
-                        <div class="controls controls-to">
-                          <input type="text" name="to" class="form-control">            
-                        </div>
-                      </div>
-                      <div class="inbox-form-group input-cc display-hide"><a href="javascript:;" class="close"> </a>        
-                        <label class="control-label">Cc:</label>        
-                        <div class="controls controls-cc">
-                          <input type="text" name="cc" class="form-control">
-                        </div>
-                      </div>    
-                      <div class="inbox-form-group input-bcc display-hide"><a href="javascript:;" class="close"> </a>        
-                        <label class="control-label">Bcc:</label>        
-                        <div class="controls controls-bcc">
-                          <input type="text" name="bcc" class="form-control">
-                        </div>
-                      </div>    
-                      <div class="inbox-form-group">
-                        <label class="control-label">Subject:</label>        
-                        <div class="controls">
-                          <input type="text" name="subject" class="form-control">
-                        </div>
-                      </div>    
-                      <div class="inbox-form-group">
-                        <textarea name="message" rows="12" class="inbox-editor inbox-wysihtml5 form-control"></textarea>
-                      </div>    
-                      <div class="inbox-compose-attachment">
-                        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload--><span class="btn green btn-outline fileinput-button"><i class="fa fa-plus"></i>            <span> Add files... </span>            
-                          <input type="file" name="files[]" multiple=""></span>
-                        <!-- The table listing the files available for upload/download-->
-                        <table role="presentation" class="table table-striped margin-top-10">
-                          <tbody class="files"> </tbody>
-                        </table>
-                      </div>    
-                      <script id="template-upload" type="text/x-tmpl">
-                        {% for (var i=0, file; file=o.files[i]; i++) { %}
-                        <tr class="template-upload fade">
-                        <td class="name" width="30%">
-                        <span>{%=file.name%}</span>
-                        </td>
-                        <td class="size" width="40%">
-                        <span>{%=o.formatFileSize(file.size)%}</span>
-                        </td> {% if (file.error) { %}
-                        <td class="error" width="20%" colspan="2">
-                        <span class="label label-danger">Error</span> {%=file.error%}</td> {% } else if (o.files.valid && !i) { %}
-                        <td>
-                        <p class="size">{%=o.formatFileSize(file.size)%}</p>
-                        <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                        <div class="progress-bar progress-bar-success" style="width:0%;"></div>
-                        </div>
-                        </td> {% } else { %}
-                        <td colspan="2"></td> {% } %}
-                        <td class="cancel" width="10%" align="right">{% if (!i) { %}
-                        <button class="btn btn-sm red cancel">
-                        <i class="fa fa-ban"></i>
-                        <span>Cancel</span>
-                        </button> {% } %}</td>
-                        </tr> {% } %}
-                      </script>
-                      <!-- The template to display files available for download-->
-                      <script id="template-download" type="text/x-tmpl">
-                        {% for (var i=0, file; file=o.files[i]; i++) { %}
-                        <tr class="template-download fade"> {% if (file.error) { %}
-                        <td class="name" width="30%">
-                        <span>{%=file.name%}</span>
-                        </td>
-                        <td class="size" width="40%">
-                        <span>{%=o.formatFileSize(file.size)%}</span>
-                        </td>
-                        <td class="error" width="30%" colspan="2">
-                        <span class="label label-danger">Error</span> {%=file.error%}</td> {% } else { %}
-                        <td class="name" width="30%">
-                        <a href="{%=file.url%}" title="{%=file.name%}" data-gallery="{%=file.thumbnail_url&&'gallery'%}" download="{%=file.name%}">{%=file.name%}</a>
-                        </td>
-                        <td class="size" width="40%">
-                        <span>{%=o.formatFileSize(file.size)%}</span>
-                        </td>
-                        <td colspan="2"></td> {% } %}
-                        <td class="delete" width="10%" align="right">
-                        <button class="btn default btn-sm" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}" {% if (file.delete_with_credentials) { %} data-xhr-fields='{"withCredentials":true}' {% } %}>
-                        <i class="fa fa-times"></i>
-                        </button>
-                        </td>
-                        </tr> {% } %}
-                        
-                      </script>
-                    </form>
-                  </div>
-                  <div class="portlet light">
-                    <div class="portlet-title">
-                      <div class="caption"><i class="fa fa-bell-o"></i>Approve Messages</div>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                      <div class="tools"><a href="javascript:;" class="collapse"></a>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;<a href="#portlet-config" data-toggle="modal" class="config"></a>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;<a href="javascript:;" class="reload"></a>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;<a href="javascript:;" class="remove"></a></div>
-                    </div>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                    <div class="portlet-body">
-                      <div class="table-scrollable">
-                        <table class="table table-striped table-bordered table-advance table-hover">
-                          <thead>
-                            <tr>
-                              <th><i class="fa fa-user"></i> User</th>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                              <th class="hidden-xs"><i class="fa fa-briefcase"></i> Subject</th>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                              <th><i class="fa fa-envelope-o"></i> Recipients</th>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                              <th></th>
-                            </tr>
-                          </thead>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                          <tbody>
-                            <tr>
-                              <td class="highlight">
-                                <div class="success"></div>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;<a href="javascript:;">Munashe Kigi</a>
-                              </td>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                              <td class="hidden-xs">Open Gym Day</td>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                              <td>Universal</td>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                              <td><a href="javascript:;" class="btn default btn-xs purple"><i class="fa fa-edit"></i> Edit</a><a href="javascript:;" class="btn default btn-xs red"><i class="fa fa-trash-o"></i> Reject</a><a href="javascript:;" class="btn default btn-xs green"><i class="fa fa-check"></i> Approve</a></td>
-                            </tr>
-                            <tr>
-                              <td class="highlight">
-                                <div class="success"></div>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;<a href="javascript:;">Jerome Thomas</a>
-                              </td>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                              <td class="hidden-xs">Clothing Line</td>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                              <td>All Members</td>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                              <td><a href="javascript:;" class="btn default btn-xs purple"><i class="fa fa-edit"></i> Edit</a><a href="javascript:;" class="btn default btn-xs red"><i class="fa fa-trash-o"></i> Reject</a><a href="javascript:;" class="btn default btn-xs green"><i class="fa fa-check"></i> Approve</a></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
+                        </th>            
+                        <th colspan="3" class="pagination-control"><span class="pagination-info"> 1-30 of 789 </span>                <a class="btn btn-sm blue btn-outline"><i class="fa fa-angle-left"></i></a>                <a class="btn btn-sm blue btn-outline"><i class="fa fa-angle-right"></i></a></th>
+                      </tr>
+                    </thead>    
+                    <tbody>
+                      <tr data-messageid="1" class="unread">
+                        <td class="inbox-small-cells">
+                          <input type="checkbox" class="mail-checkbox">
+                        </td>            
+                        <td class="inbox-small-cells"><i class="fa fa-star"></i></td>            
+                        <td class="view-message hidden-xs"> Massaging Club</td>            
+                        <td class="view-message"> New Weekly Program </td>            
+                        <td class="view-message inbox-small-cells"><i class="fa fa-paperclip"></i></td>            
+                        <td class="view-message text-right"> 16:30 PM </td>
+                      </tr>        
+                      <tr data-messageid="2" class="unread">
+                        <td class="inbox-small-cells">
+                          <input type="checkbox" class="mail-checkbox">
+                        </td>            
+                        <td class="inbox-small-cells"><i class="fa fa-star"></i></td>            
+                        <td class="view-message hidden-xs"> Universal </td>            
+                        <td class="view-message"> Gym Open Day </td>            
+                        <td class="view-message inbox-small-cells"> </td>            
+                        <td class="view-message text-right"> 19:12pm</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
